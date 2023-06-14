@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.5, minimum-scale=1.0, user-scalable=no">
+  <link rel=" stylesheet" href="/find_pw.b994eb35.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+  <title>login_join</title>
+
+  <script>document.addEventListener('DOMContentLoaded', function () {
+  var body = document.querySelector('body');
+  var userName = document.getElementById('userName');
+  var userId = document.getElementById('userId');
+  var userNum = document.getElementById('userTel');
+  var checkBtn = document.getElementById('checkBtn');
+  var userList = [{
+    id: "green01",
+    name: "유재석",
+    tel: "01012345678"
+  }, {
+    id: "green02",
+    name: "조세호",
+    tel: "01055556666"
+  }, {
+    id: "green03",
+    name: "이영지",
+    tel: "01011112222"
+  }, {
+    id: "green04",
+    name: "박재범",
+    tel: "01022223333"
+  }, {
+    id: "green05",
+    name: "홍진경",
+    tel: "01099998888"
+  }];
+  checkBtn.addEventListener('click', function () {
+    var failBg = document.getElementById('failBg');
+    var failBox = document.getElementById('failBox');
+    var failBtn = document.getElementById('failBtn');
+    var successBg = document.getElementById('successBg');
+    var successBox = document.getElementById('successBox');
+    var successBtn = document.getElementById('successBtn');
+    for (var i = 0; i < userList.length; i++) {
+      if (userName.value == userList[i].name && userId.value == userList[i].id && userTel.value == userList[i].tel) {
+        window.scrollTo(0, 0);
+        body.style.overflow = 'hidden';
+        successBg.style.display = 'block';
+        successBox.style.display = 'block';
+        successBtn.addEventListener('click', function () {
+          location.href = './reset_pw.html';
+        });
+        break;
+      }
+      if (i == userList.length - 1) {
+        window.scrollTo(0, 0);
+        body.style.overflow = 'hidden';
+        failBg.style.display = 'block';
+        failBox.style.display = 'block';
+        failBtn.addEventListener('click', function () {
+          failBg.style.display = 'none';
+          failBox.style.display = 'none';
+          body.style.overflow = 'visible';
+          userName.value = "";
+          userId.value = "";
+          userTel.value = "";
+          userName.focus();
+          return true;
+        });
+      }
+    }
+  });
+});</script>
+<script src="/find_pw.b994eb35.js"></script></head>
+
+<body>
+  <!-- ------------------ popup ------------------ -->
+  <section class="chkSuccess">
+    <div id="successBg" class="popBg successBg"></div>
+    <div id="successBox" class="popBox successBox">
+      <i class="fas fa-check-circle"></i>
+      <p>인증이 완료되었습니다.<br>확인 버튼을 눌러 비밀번호를 재설정 해주세요.</p>
+      <button id="successBtn" class="successBtn"><span>확인</span></button>
+    </div><!-- //popUp_id -->
+  </section>
+
+  <section class="chkFail">
+    <div id="failBg" class="popBg failBg"></div>
+    <div id="failBox" class="popBox failBox">
+      <i class="fas fa-exclamation-circle"></i>
+      <p>등록되지 않은 회원정보입니다.</p>
+      <button id="failBtn" class="failBtn"><span>확인</span></button>
+    </div><!-- //popUp_pw -->
+  </section>
+  <!-- ------------------ //popup ------------------ -->
+
+  <link rel="stylesheet" href="/header.2256be32.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<!-- user main js  -->
+<script src="/header.4485232e.js" defer=""></script>
+
+
+<body>
+  <header class="header">
+    <div class="logo">
+      <a href="/index.html"><img src="/1962_logo_soft.fa84afa8.png" alt="1962_logo"></a>
+    </div>
+
+    <nav class="nav">
+      <div class="lnb eng">
+        <ul class="lnb_main">
+          <li class="shop"><a href="/sub.html">shop</a></li>
+          <li class="our_story"><a href="/sub.html">our story</a></li>
+          <li><a href="/sub.html">special project</a></li>
+          <li class="support"><a href="/sub.html">support</a></li>
+          <li><a href="/sub.html">contact</a></li>
+        </ul><!-- //lnb_main -->
+
+        <ul class="lnb_detail">
+          <li class="shop_detail_bg">
+            <ul class="shop_detail kor">
+              <li><a href="/sub.html">
+                  <p>NEW</p>
+                </a></li>
+              <li><a href="/sub.html">
+                  <p>ALL</p>
+                </a></li>
+              <li><a href="/sub.html">IK 테이블 스탠드</a></li>
+              <li><a href="/sub.html">IK 플로어 스탠드</a></li>
+              <li><a href="/sub.html">IK 팬던트</a></li>
+              <li><a href="/sub.html">클래식전구</a></li>
+              <li><a href="/sub.html">장식용전구</a></li>
+              <li><a href="/sub.html">삼파장전구</a></li>
+              <li><a href="/sub.html">가드닝전구</a></li>
+              <li><a href="/sub.html">할로겐전구</a></li>
+              <li><a href="/sub.html">산업용전구</a></li>
+              <li><a href="/sub.html">크립톤전구</a></li>
+              <li><a href="/sub.html">LED전구</a></li>
+            </ul>
+          </li><!-- //shop_detail -->
+
+          <li class="story_detail_bg">
+            <ul class="story_detail eng">
+              <li><a href="/sub.html">brand story</a></li>
+              <li><a href="/sub.html">history</a></li>
+            </ul>
+          </li><!-- //story_detail -->
+
+          <li class="support_detail_bg">
+            <ul class="support_detail eng">
+              <li><a href="/sub.html">guide</a></li>
+              <li><a href="/sub.html">news</a></li>
+              <li><a href="/sub.html">q & a</a></li>
+              <li><a href="/sub.html">download</a></li>
+            </ul>
+          </li><!-- //support_detail -->
+        </ul><!-- //lnb_detail -->
+      </div><!-- //lnb -->
+
+      <div class="gnb eng">
+        <ul>
+          <li class="search">
+            <input type="text"><i class="fas fa-search"></i></li>
+          <li class="login btn"><a href="/login.html" target="_blank">login</a></li>
+          <li class="join btn"><a href="/join_terms.html" target="_blank">join</a></li>
+          <li class="cart btn"><a href="#!">cart</a></li>
+        </ul>
+      </div><!-- //gnb -->
+    </nav> <!-- //nav -->
+  </header>
+</body>
+
+  <!-- ------------------ find_pw ------------------ -->
+  <section class="main">
+    <div class="wrap kor">
+      <div class="find_pw kor">
+        <h1>비밀번호 찾기</h1>
+        <p>아래 인증 절차를 통해 비밀번호를 변경해 주시기 바랍니다.</p>
+      </div>
+
+      <form name="loginForm" action="#">
+        <ul class="findPw kor">
+          <li>
+            <label for="userName">이름</label>
+            <br>
+            <input type="text" id="userName" class="userName" placeholder="이름을 입력해주세요." onfocus="this.placeholder=''" onblur="this.placeholder='이름을 입력해주세요.'" required="">
+          </li>
+
+          <li>
+            <label for="userId">아이디</label>
+            <br>
+            <input type="text" id="userId" class="userId" placeholder="아이디를 입력해주세요." onfocus="this.placeholder=''" onblur="this.placeholder='아이디를 입력해주세요.'" required="">
+          </li>
+
+          <li class="tel">
+            <label for="userTel">전화번호</label>
+            <input type="text" id="userTel" class="userTel" placeholder="전화번호를 입력해주세요. ( - 생략)" onfocus="this.placeholder=''" onblur="this.placeholder='전화번호를 입력해주세요. ( - 생략)'" size="11" required="">
+          </li>
+        </ul>
+
+        <button type="button" id="checkBtn" class="checkBtn kor">인증 확인</button>
+        <button type="button" id="loginBtn" class="loginBtn kor"><a href="/login.html">로그인</a></button>
+
+        <div class="bottom_line_01"></div>
+    </form></div><!-- //wrap -->
+  </section>
+
+  <link rel="stylesheet" href="/footer.af5cb2f3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<!-- user main js  -->
+<script src="/footer.e340dbc0.js" defer=""></script>
+
+
+<body>
+  <footer class="footer">
+    <div class="footer_wrap">
+      <div class="cs eng">
+        <h3>CS CENTER</h3>
+        <h1>053-581-1079</h1>
+        <p class="kor"> 08:00 ~ 17:00 ｜ 주말 및 공휴일 휴무</p>
+      </div><!-- //cs -->
+
+      <div class="footer_logo">
+        <a href="/1962_logo_white.c75feaf9.png"></a> <img src="/1962_logo_white.c75feaf9.png" alt="1962_logo_white">
+      </div>
+
+      <div class="copyright eng">
+        <p>ⓒ 2023 Ilkwang Co., Ltd All rights reserved.</p>
+      </div>
+
+      <div class="insta_icon">
+        <a href="https://www.instagram.com/ilkwanglighting/" target="_blank"><img src="/instagram.4b783f94.png" alt="instagram"></a>
+      </div>
+
+      <div class="footer_menu">
+        <div class="info menu">
+          <p class="eng">INFO</p>
+          <ul>
+            <li><a href="/sub.html">공지사항</a></li>
+            <li><a href="/sub.html">자주 묻는 질문</a></li>
+            <li><a href="/sub.html">이용약관</a></li>
+            <li><a href="/sub.html">개인정보취급방침</a></li>
+          </ul>
+        </div><!-- //info -->
+
+        <div class="support menu">
+          <p class="eng">SUPPORT</p>
+          <ul>
+            <li><a href="/sub.html">제품 가이드</a></li>
+            <li><a href="/sub.html">뉴스</a></li>
+            <li><a href="/sub.html">브로슈어</a></li>
+          </ul>
+        </div><!-- //support -->
+
+        <div class="contact menu">
+          <p class="eng">CONTACT</p>
+          <ul>
+            <li><a href="/sub.html">문의하기</a></li>
+            <li><a href="/sub.html">매장안내</a></li>
+          </ul>
+        </div><!-- //contact -->
+      </div><!-- //footer_menu -->
+
+
+      <div class="business kor">
+        <div class="button">
+          <div id="busiOpen" class="btn_open btn"><i class="fas fa-angle-down"></i></div>
+          <div id="busiClose" class="btn_close btn"><i class="fas fa-angle-up"></i></div>
+        </div>
+        <div class="business_txt">
+          <h5>(주)일광 사업자 정보</h5>
+          <p class="business_info">일광로틱 | 대표 김홍도 | 사업자등록번호 510-05-40260 <a href="#!">[사업자정보확인]</a><br>
+            통신판매신고번호 2013-경북성주-34호 | 개인정보책임자 김홍도<br>
+            경상북도 성주군 선남면 문방1길 1 | 전화 053-581-1079</p>
+        </div><!-- //business_txt -->
+      </div><!-- //business -->
+    </div><!-- //footer_wrap -->
+  </footer>
+</body>
+
+</body>
+
+</html>

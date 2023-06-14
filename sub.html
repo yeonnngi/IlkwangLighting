@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="./scss/sub.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+
+  <!-- //jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+  <!-- gsap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+
+  <!-- ScrollToPlugin.min.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
+
+  <!-- user main js  -->
+  <script type="module" src="./js/sub.js" defer></script>
+
+  <title>IK by Ilkwang Lighting</title>
+</head>
+
+<body>
+  <include src="./header.html"></include>
+
+  <main class="main">
+    <div class="path eng">
+      <a href="./index.html">Home <i class="fas fa-angle-right"></i></a>
+      <a href="./sub.html">Shop <i class="fas fa-angle-right"></i></a>
+      <a href="./sub.html"><span>All</span></a>
+    </div><!-- //path -->
+
+    <div class="sub_menu">
+      <div class="category_wrap">
+        <ul class="category eng">
+          <li>
+            <a href="./sub.html">A</a>
+            <p>ALL</p>
+          </li>
+          <li>
+            <a href="#!"><img src="./images/category_IKtable.png" alt="category_IKtable"></a>
+            <p>IK 테이블 스탠드</p>
+          </li>
+          <li>
+            <a href="#!"><img src="./images/category_IKfloor.png" alt="category_IKfloor"></a>
+            <p>IK 테이블 스탠드</p>
+          </li>
+          <li>
+            <a href="#!"><img src="./images/category_IKpendant.png" alt="category_IKpendant"></a>
+            <p>IK 팬던트</p>
+          </li>
+          <li>
+            <a href="#!"><img src="./images/category_classic.png" alt="category_classic"></a>
+            <p>클래식 전구</p>
+          </li>
+          <li>
+            <a href="#!"><img src="./images/category_deco.png" alt="category_deco"></a>
+            <p>장식용 전구</p>
+          </li>
+          <li>
+            <a href="#!"><img src="./images/category_fluorescent.png" alt="category_fluorescent"></a>
+            <p>삼파장 전구</p>
+          </li>
+          <li>
+            <a href="#!"><img src="./images/category_gardening.png" alt="category_gardening"></a>
+            <p>가드닝 전구</p>
+          </li>
+          <li>
+            <a href="#!"><img src="./images/category_halogen.png" alt="category_halogen"></a>
+            <p>할로겐 전구</p>
+          </li>
+          <li>
+            <a href="#!"><img src="./images/category_industrial.png" alt="category_industrial"></a>
+            <p>산업용 전구</p>
+          </li>
+          <li>
+            <a href="#!"><img src="./images/category_krypton.png" alt="category_krypton"></a>
+            <p>크립톤 전구</p>
+          </li>
+          <li>
+            <a href="#!"><img src="./images/category_led.png" alt="category_led"></a>
+            <p>LED 전구</p>
+          </li>
+        </ul><!-- //category -->
+      </div><!-- //category_wrap -->
+    </div><!-- //sub_menu -->
+
+    <div class="all">
+      <p>ALL</p>
+    </div>
+
+    <div class="array">
+      <div class="buttonContainer kor">
+        <button class="basicBtn">신상품</button>
+        <div>|</div>
+        <button class="bestBtn">BEST</button>
+        <div>|</div>
+        <button class="abcBtn">상품명</button>
+        <div>|</div>
+        <button class="lowPriceBtn">낮은 가격</button>
+        <div>|</div>
+        <button class="highPriceBtn">높은 가격</button>
+      </div>
+    </div>
+
+
+    <section class="product">
+      <ul class="product_list">
+       </ul><!-- //product_list -->
+
+      <div id="paging" class="paging kor">
+        <i class="fas fa-angle-double-left" id="first_page"></i>
+        <i class="fas fa-angle-left" id="prev_page"></i>
+        <div id="pages" class="pages">
+          <span class="active">1</span>
+          <span>2</span>
+          <span>3</span>
+        </div><!-- //pages -->
+        <i class="fas fa-angle-right" id="next_page"></i>
+        <i class="fas fa-angle-double-right" id="last_page"></i>
+      </div><!-- //pagination -->
+    </section><!-- //product -->
+  </main><!-- //main -->
+
+  <section class="history">
+    <div class="history_popup eng">
+      <h4>SHOPPING HISTORY</h4>
+      <div class="history_hide"><i class="fas fa-times"></i></div>
+      <p class="today">TODAY</p>
+
+      <div class="shopping_history">
+        <div class="list_01 history_list kor">
+          <div class="list_img">
+            <img src="./images/history_01.jpg" alt="history_01">
+          </div>
+          <div class="list_txt">
+            <div class="list_delete"><i class="fas fa-times"></i></div>
+            <p>IK 시리즈 ACORN22 Table Stand 5Colors</p>
+            <span>160,000원</span>
+          </div>
+        </div><!-- //list01 -->
+      </div><!-- //shopping_history-->
+
+      <div id="deleteAll" class="deleteAll kor">
+        <p>전체 삭제</p>
+      </div><!-- //deleteAll -->
+    </div><!-- //history_popup -->
+  </section><!-- //history -->
+
+  <include src="./footer.html"></include>
+
+  <div class="top_btn"><i class="fas fa-chevron-up"></i></div>
+  <div class="history_btn"><i class="fas fa-history"></i></div>
+
+</body>
+
+</html>

@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #252117; //#332e22
+}
+
+body,
+html {
+  width: 100%;
+  height: 100vh;
+  background-color: #f8f8f8;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.kor {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.eng {
+  font-family: 'Poppins', sans-serif;
+}
+
+$color : #FD8234;
+
+
+/* ----------------------- footer ----------------------- */
+.footer {
+  width: 100vw;
+  height: 550px;
+  background-color: #261C13;
+  z-index: 99999999;
+
+  .footer_wrap {
+    width: 1220px;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+
+    .cs {
+      width: 350px;
+      padding-top: 60px;
+
+      h3 {
+        color: #fff;
+        padding-left: 2px;
+      }
+
+      h1 {
+        color: $color;
+      }
+
+      p.kor {
+        font-size: 14px;
+        color: #fff;
+        padding-left: 2px;
+      }
+
+    }
+
+    .footer_logo {
+      width: 100px;
+      height: auto;
+      display: inline-block;
+      margin: 205px 0 20px 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .copyright {
+      color: #fff;
+      font-size: 11px;
+      padding: 5px 0;
+    }
+
+    .insta_icon {
+      width: 35px;
+      height: 35px;
+      position: absolute;
+      top: 50px;
+      right: 0px;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .footer_menu {
+      width: 395px;
+      height: auto;
+      position: absolute;
+      top: 138px;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+
+      .menu {
+        p {
+          color: #fff;
+          font-size: 16px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+
+        ul li {
+          padding: 2px 0;
+
+          a {
+            font-size: 13px;
+            font-weight: bold;
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    .business {
+      width: 400px;
+      height: 105px;
+      position: absolute;
+      top: 345px;
+      right: -3px;
+
+      .button {
+        cursor: pointer;
+
+        .btn i {
+          color: #fff;
+          position: absolute;
+          top: 4px;
+          left: 135px;
+        }
+
+        .btn_close {
+          display: none;
+
+          i {
+            top: 2px;
+          }
+        }
+      }
+
+      .business_txt {
+        h5 {
+          font-size: 14px;
+          font-weight: bold;
+          color: #fff;
+          margin-bottom: 20px;
+        }
+
+        .business_info {
+          font-size: 13px;
+          color: #fff;
+          display: none;
+
+          a {
+            color: $color;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+

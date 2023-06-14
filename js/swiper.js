@@ -28,10 +28,6 @@ const swiperNew = new Swiper('.swiper_new', {
   slidesOffsetAfter: 10,
   slidesPerGroup: 3,
   loop: true,
-  centerInsufficientSlides: true,
-  centeredSlides: true,
-  centeredSlidesBounds: true,
-
 
   navigation: {
     nextEl: '.newBtn_next',
@@ -52,18 +48,18 @@ const swiperBest = new Swiper(".swiper_best", {
   centeredSlidesBounds: true,
   centerInsufficientSlides: true,
   slidesPerView: "auto",
-  
+
   coverflowEffect: {
     rotate: 0,
     stretch: 50,
     depth: 100,
     modifier: 1.5,
 
-/* 
-    rotate: 2,
-    stretch: 0,
-    depth: 10,
-    modifier: 10, */
+    /* 
+        rotate: 2,
+        stretch: 0,
+        depth: 10,
+        modifier: 10, */
     slideShadows: true,
   },
   autoplay: {
@@ -76,3 +72,33 @@ const swiperBest = new Swiper(".swiper_best", {
     prevEl: '.bestBtn_prev',
   },
 });
+
+
+
+
+const swiperDetail = new Swiper('.swiper_detail', {
+  centeredSlides: true,
+  loop: true,
+
+  pagination: {
+    el: '.detail_pagination',
+    clickable: true,
+  },
+
+  navigation: {
+    nextEl: '.swiper-button-prev',
+    prevEl: '.swiper-button-next',
+  }
+}); //swiperMain
+
+
+const swiperOption = new Swiper('.swiper_option', {
+  centeredSlides: true,
+
+  loop: true,
+
+  navigation: {
+    nextEl: '.swiper-button-prev',
+    prevEl: '.swiper-button-next',
+  }
+}); //swiperMain

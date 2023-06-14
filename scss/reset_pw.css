@@ -1,0 +1,155 @@
+* {margin: 0; padding: 0;}
+
+li {list-style: none;}
+
+a {
+  color: #222;
+  text-decoration: none;
+}
+
+body,
+html {
+  width: 100%;
+  background-color: #f8f8f8;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.kor {font-family: 'Noto Sans KR', sans-serif;}
+.eng {font-family: 'Poppins', sans-serif;}
+
+
+/* --------------- popUp ---------------  */
+.popBg{
+  width: 100%; height: 100%;
+  position: absolute;
+  top: 0; left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  display: none;
+}
+
+.popBox{
+  width: 400px; height: 200px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  z-index: 999;
+  position: absolute;
+  top: calc(50% - 200px); left: calc(50% - 200px);
+  text-align: center;
+  display: none;
+}
+
+.popBox i{
+  font-size: 22px;
+  color: #FD8234;
+  text-align: center;
+  padding: 10px;
+  margin-top: 30px;
+}
+
+.longBox i{
+  margin-top: 25px;
+}
+
+.popBox p{
+  color: #333;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.popBox button{
+  width: 70px; height: 35px;
+  border: none;
+  background-color: #191919;
+  border-radius: 5px;
+  margin-top: 16px;
+  cursor: pointer;
+}
+
+.longBox button{
+  margin-top: 15px;
+}
+
+.popBox button:hover{
+  background-color: #FD8234;
+}
+
+.popBox button span{
+  color: #fff;
+  font-size: 13px;
+  line-height: 37px;
+  font-weight: bold;
+}
+
+
+/* --------------- find_pw ---------------  */
+.wrap{
+  width: 400px; height: auto;
+  margin: 0 auto;
+}
+
+.find_pw{
+  font-size: 15px;
+  margin: 200px auto 20px;
+}
+
+.find_pw h1{
+  margin-bottom: 35px;
+}
+
+.findPw li label{
+  font-size: 14px;
+}
+
+.userPw1,
+.userPw2{
+  width: 400px; height: 45px;
+  padding: 10px 15px; box-sizing: border-box;
+  margin: 5px auto 15px;
+  font-size: 14px;
+}
+
+input::placeholder{
+  font-size: 11px;
+}
+
+.checkBtn{
+  width: 400px; height: 50px;
+  background-color: #e2e2e2;
+  border: none;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 50px;
+  letter-spacing: 1px;
+  margin: 10px auto 5px;
+  cursor: pointer;
+}
+
+.checkBtn:hover{
+  background-color: #FD8234;
+  color: #fff;
+}
+
+.loginBtn{
+  width: 400px; height: 50px;
+  background-color: #3d3d3d;
+  border: none;
+  text-align: center;
+  line-height: 50px;
+  letter-spacing: 1px;
+  margin: 5px auto 20px;
+  cursor: pointer;
+}
+
+.loginBtn a{
+  font-size: 13px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.loginBtn:hover{
+  background-color: #FD8234;
+}

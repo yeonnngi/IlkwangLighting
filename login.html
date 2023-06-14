@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0 maximum-scale=1.5, minimum-scale=1.0, user-scalable=no">
+  <link rel=" stylesheet" href="./scss/login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+  <title>login_join</title>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      const body = document.querySelector('body');
+      const userId = document.getElementById('user_id');
+      const userPw = document.getElementById('user_pw');
+      const loginBtn = document.querySelector('.loginBtn');
+      const idSave = document.getElementById('id_save');
+
+      const userList = [{
+        id: "green01",
+        name: "유재석",
+        tel: "01012345678"
+      }, {
+        id: "green02",
+        name: "조세호",
+        tel: "01055556666"
+      }, {
+        id: "green03",
+        name: "이영지",
+        tel: "01011112222"
+      }, {
+        id: "green04",
+        name: "박재범",
+        tel: "01022223333"
+      }, {
+        id: "green05",
+        name: "홍진경",
+        tel: "01099998888"
+      }]
+
+      userId.addEventListener('change', idCheck)
+      userPw.addEventListener('change', pwCheck)
+      loginBtn.addEventListener('click', submit)
+      idSave.addEventListener('click', keepId)
+
+      function idCheck() {
+        const idChkBg = document.getElementById('id_bg')
+        const idChk = document.getElementById('id_box')
+        const idChkBtn = document.getElementById('idChkBtn')
+
+
+        if (!regId.test(userId.value)) {
+          window.scrollTo(0, 0);
+          body.style.overflow = 'hidden';
+          idChkBg.style.display = 'block';
+          idChk.style.display = 'block';
+
+          idChkBtn.addEventListener('click', () => {
+            idChkBg.style.display = 'none';
+            idChk.style.display = 'none';
+            body.style.overflow = 'visible';
+            userId.value = "";
+            userId.focus();
+            return true;
+          })
+        }
+      } //idCheck
+
+
+      function pwCheck() {
+        const pwChkBg = document.getElementById('pw_bg')
+        const pwChk = document.getElementById('pw_box')
+
+        if (!regPw.test(userPw.value)) {
+          window.scrollTo(0, 0);
+          body.style.overflow = 'hidden';
+          pwChkBg.style.display = 'block';
+          pwChk.style.display = 'block';
+
+          pwChkBtn.addEventListener('click', () => {
+            pwChkBg.style.display = 'none';
+            pwChk.style.display = 'none';
+            body.style.overflow = 'visible';
+            userPw.select();
+            return true;
+          })
+        }
+      } //checkPw()
+
+
+      function submit() {
+        const fillIdBg = document.getElementById('fillId_bg');
+        const fillIdBox = document.getElementById('fillId_box');
+        const fillIdChk = document.getElementById('fillIdChk');
+        const fillPwBg = document.getElementById('fillPw_bg');
+        const fillPwBox = document.getElementById('fillPw_box');
+        const fillPwChk = document.getElementById('fillPwChk');
+        const successBg = document.getElementById('success_bg');
+        const successBox = document.getElementById('success_box');
+        const loginChkBtn = document.getElementById('loginChkBtn');
+
+        if (userId.value == '') {
+          window.scrollTo(0, 0);
+          body.style.overflow = 'hidden';
+          fillIdBg.style.display = 'block';
+          fillIdBox.style.display = 'block';
+          
+          fillIdChk.addEventListener('click', () => {
+            fillIdBg.style.display = 'none';
+            fillIdBox.style.display = 'none';
+            body.style.overflow = 'visible';
+            userId.focus();
+            return true;
+          })
+        } else if (userPw.value == '') {
+          window.scrollTo(0, 0);
+          body.style.overflow = 'hidden';
+          fillPwBg.style.display = 'block';
+          fillPwBox.style.display = 'block';
+
+          fillPwChk.addEventListener('click', () => {
+            fillPwBg.style.display = 'none';
+            fillPwBox.style.display = 'none';
+            body.style.overflow = 'visible';
+            userPw.focus();
+            return true;
+          })
+        } else if (regId.test(userId.value) && regPw.test(userPw.value)) {
+          window.scrollTo(0, 0);
+          body.style.overflow = 'hidden';
+          successBg.style.display = 'block';
+          successBox.style.display = 'block';
+
+          loginChkBtn.addEventListener('click', () => {
+            successBg.style.display = 'none';
+            successBox.style.display = 'none';
+            body.style.overflow = 'visible';
+            location.href = './index.html';
+          })
+        }
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <!-- ------------------ popup ------------------ -->
+  <section class="popUp_id">
+    <div id="id_bg" class="popUp_bg"></div>
+    <div id="id_box" class="popUp_box">
+      <i class="fas fa-exclamation-circle"></i>
+      <p>아이디를 확인해주세요.</p>
+      <button id="idChkBtn"><span>확인</span></button>
+    </div><!-- //popUp_id -->
+  </section>
+
+  <section class="popUp_pw">
+    <div id="pw_bg" class="popUp_bg"></div>
+    <div id="pw_box" class="popUp_box">
+      <i class="fas fa-exclamation-circle"></i>
+      <p>비밀번호를 확인해주세요.</p>
+      <button id="pwChkBtn"><span>확인</span></button>
+    </div><!-- //popUp_pw -->
+  </section>
+
+  <section class="popUp_fillId">
+    <div id="fillId_bg" class="popUp_bg"></div>
+    <div id="fillId_box" class="popUp_box">
+      <i class="fas fa-exclamation-circle"></i>
+      <p>아이디를 입력해주세요</p>
+      <button id="fillIdChk"><span>확인</span></button>
+    </div><!-- //popUp_fillId -->
+  </section>
+
+  <section class="popUp_fillPw">
+    <div id="fillPw_bg" class="popUp_bg"></div>
+    <div id="fillPw_box" class="popUp_box">
+      <i class="fas fa-exclamation-circle"></i>
+      <p>비밀번호를 입력해주세요</p>
+      <button id="fillPwChk"><span>확인</span></button>
+    </div><!-- //popUp_fillPw -->
+  </section>
+
+  <section class="popUp_success">
+    <div id="success_bg" class="popUp_bg "></div>
+    <div id="success_box" class="popUp_box">
+      <i class="fas fa-check-circle"></i>
+      <p>로그인되었습니다!</p>
+      <button id="loginChkBtn"><span>확인</span></button>
+    </div><!-- //popUp_codePass -->
+  </section>
+  <!-- ------------------ //popup ------------------ -->
+
+  <include src="./header.html"></include>
+
+  <!-- ------------------ login ------------------ -->
+  <section class="main">
+    <div class="wrap kor">
+      <div class="login_title kor">
+        <h1>로그인</h1>
+      </div>
+
+      <form name="loginForm" class="loginForm" action="#" method="get">
+        <ul>
+          <li>
+            <label for="user_id"></label>
+            <input type="text" id="user_id" class="user_id" placeholder="아이디를 입력해주세요." onfocus="this.placeholder=''"
+              onblur="this.placeholder='아이디를 입력해주세요.'" required>
+          </li>
+          <li>
+            <label for="user_pw"></label>
+            <input type="password" id="user_pw" class="user_pw" placeholder="비밀번호를 입력해주세요."
+              onfocus="this.placeholder=''" onblur="this.placeholder='비밀번호를 입력해주세요.'" required>
+          </li>
+          <li class="id_save kor">
+            <input type="checkbox" id="id_save" class="id_save_chk">
+            <label for="id_save">
+              <p>아이디 저장</p>
+            </label>
+          </li>
+        </ul>
+
+        <button type="button" class="loginBtn kor">로그인</button>
+
+        <div class="other_btn kor">
+          <ul>
+            <li><a href="./find_id.html">아이디 찾기</a></li>
+            <li><a href="./find_pw.html">비밀번호 찾기</a></li>
+            <li><a href="./join_terms.html">회원가입</a></li>
+          </ul>
+        </div><!-- //other_btn -->
+
+        <div class="login_sns">
+          <div class="sns_text">
+            <div class="line_01 line"></div>
+            <div class="sns_login kor">SNS 로그인</div>
+            <div class="line_02 line"></div>
+          </div><!-- //sns_text -->
+
+          <div class="sns_icon">
+            <div class="naver icon">
+              <img src="./images/naver.png" alt="naver">
+            </div>
+            <div class="kakao icon">
+              <img src="./images/kakao.png" alt="kakao">
+            </div>
+          </div><!-- //sns_icon -->
+        </div><!-- //login_sns -->
+
+        <div class="bottom_line_01"></div>
+    </div><!-- //wrap -->
+  </section>
+
+  <include src="./footer.html"></include>
+</body>
+
+</html>

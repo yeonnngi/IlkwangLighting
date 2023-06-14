@@ -1,0 +1,117 @@
+* {margin: 0; padding: 0;}
+
+li {list-style: none;}
+
+a {
+  color: #222;
+  text-decoration: none;
+}
+
+body,
+html {
+  width: 100%;
+  background-color: #f8f8f8;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.kor {font-family: 'Noto Sans KR', sans-serif;}
+.eng {font-family: 'Poppins', sans-serif;}
+
+
+
+/* --------------- join_success ---------------  */
+.join_success{
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 50px 0 0;
+}
+
+.wrap {
+  width: 500px;
+  height: auto;
+  margin: 115px auto 150px;
+}
+
+.join_title h1{
+  text-align: center;
+  margin: 110px auto 10px;
+}
+
+.join_title .path p{
+  font-size: 13px;
+  text-align: center;
+  color: #191919;
+  margin-bottom: 50px;
+}
+
+.join_title .path p span{
+  font-weight: bold;
+  color: #FD8234;
+}
+
+.join_title .path p i{
+  padding: 0 10px;
+}
+
+.benefit{
+  width: 500px; height: auto;
+  margin: 0 auto;
+}
+
+.benefit .new h3{
+  margin: 75px 10px 0;
+}
+
+.benefit .new h3 i{
+  font-size: 24px;
+  padding: 0 8px;
+}
+
+.benefit .new_box{
+  width: 500px; height: 110px;
+  background-color: #F4EEE8;
+  margin: 20px 0 25px;
+  padding: 22px 30px 10px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.benefit .new_box p{
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.benefit .new_box p.title{
+  padding: 5px 10px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.home_btn{
+  width: 500px; height: 60px;
+  background-color: #261C13;
+  text-align: center;
+  margin: 50px auto 150px;
+  cursor: pointer;
+}
+
+.home_btn:hover{
+  background-color: #FD8234;
+}
+
+.home_btn a{
+  color: #EFE8DA;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 60px;
+  letter-spacing: 1px;
+}
+
+.home_btn:hover a{
+  color: #fff;
+}
+
+
+/*# sourceMappingURL=/success.ebcc3398.css.map */

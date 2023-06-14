@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0 maximum-scale=1.5, minimum-scale=1.0, user-scalable=no">
+  <link rel=" stylesheet" href="./scss/find_pw.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+  <title>login_join</title>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      const body = document.querySelector('body');
+      const userName = document.getElementById('userName');
+      const userId = document.getElementById('userId');
+      const userNum = document.getElementById('userTel');
+      const checkBtn = document.getElementById('checkBtn');
+
+      const userList = [{
+        id: "green01",
+        name: "유재석",
+        tel: "01012345678"
+      }, {
+        id: "green02",
+        name: "조세호",
+        tel: "01055556666"
+      }, {
+        id: "green03",
+        name: "이영지",
+        tel: "01011112222"
+      }, {
+        id: "green04",
+        name: "박재범",
+        tel: "01022223333"
+      }, {
+        id: "green05",
+        name: "홍진경",
+        tel: "01099998888"
+      }]
+
+      checkBtn.addEventListener('click', () => {
+        const failBg = document.getElementById('failBg');
+        const failBox = document.getElementById('failBox');
+        const failBtn = document.getElementById('failBtn');
+        const successBg = document.getElementById('successBg');
+        const successBox = document.getElementById('successBox');
+        const successBtn = document.getElementById('successBtn');
+
+        for (let i = 0; i < userList.length; i++) {
+          if (userName.value == userList[i].name && userId.value == userList[i].id && userTel.value == userList[
+              i].tel) {
+            window.scrollTo(0, 0);
+            body.style.overflow = 'hidden';
+            successBg.style.display = 'block';
+            successBox.style.display = 'block';
+
+            successBtn.addEventListener('click', () => {
+              location.href = './reset_pw.html'
+            });
+            break;
+          }
+          if (i == userList.length - 1) {
+            window.scrollTo(0, 0);
+            body.style.overflow = 'hidden';
+            failBg.style.display = 'block';
+            failBox.style.display = 'block';
+
+            failBtn.addEventListener('click', () => {
+              failBg.style.display = 'none';
+              failBox.style.display = 'none';
+              body.style.overflow = 'visible';
+              userName.value = "";
+              userId.value = "";
+              userTel.value = "";
+              userName.focus();
+              return true;
+            })
+          }
+        }
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <!-- ------------------ popup ------------------ -->
+  <section class="chkSuccess">
+    <div id="successBg" class="popBg successBg"></div>
+    <div id="successBox" class="popBox successBox">
+      <i class="fas fa-check-circle"></i>
+      <p>인증이 완료되었습니다.<br />확인 버튼을 눌러 비밀번호를 재설정 해주세요.</p>
+      <button id="successBtn" class="successBtn"><span>확인</span></button>
+    </div><!-- //popUp_id -->
+  </section>
+
+  <section class="chkFail">
+    <div id="failBg" class="popBg failBg"></div>
+    <div id="failBox" class="popBox failBox">
+      <i class="fas fa-exclamation-circle"></i>
+      <p>등록되지 않은 회원정보입니다.</p>
+      <button id="failBtn" class="failBtn"><span>확인</span></button>
+    </div><!-- //popUp_pw -->
+  </section>
+  <!-- ------------------ //popup ------------------ -->
+
+  <include src="./header.html"></include>
+
+  <!-- ------------------ find_pw ------------------ -->
+  <section class="main">
+    <div class="wrap kor">
+      <div class="find_pw kor">
+        <h1>비밀번호 찾기</h1>
+        <p>아래 인증 절차를 통해 비밀번호를 변경해 주시기 바랍니다.</p>
+      </div>
+
+      <form name="loginForm" action="#">
+        <ul class="findPw kor">
+          <li>
+            <label for="userName">이름</label>
+            </br>
+            <input type="text" id="userName" class="userName" placeholder="이름을 입력해주세요." onfocus="this.placeholder=''"
+              onblur="this.placeholder='이름을 입력해주세요.'" required>
+          </li>
+
+          <li>
+            <label for="userId">아이디</label>
+            </br>
+            <input type="text" id="userId" class="userId" placeholder="아이디를 입력해주세요." onfocus="this.placeholder=''"
+              onblur="this.placeholder='아이디를 입력해주세요.'" required>
+          </li>
+
+          <li class="tel">
+            <label for="userTel">전화번호</label>
+            <input type="text" id="userTel" class="userTel" placeholder="전화번호를 입력해주세요. ( - 생략)"
+              onfocus="this.placeholder=''" onblur="this.placeholder='전화번호를 입력해주세요. ( - 생략)'" size="11" required>
+          </li>
+        </ul>
+
+        <button type="button" id="checkBtn" class="checkBtn kor">인증 확인</button>
+        <button type="button" id="loginBtn" class="loginBtn kor"><a href="./login.html">로그인</a></button>
+
+        <div class="bottom_line_01"></div>
+    </div><!-- //wrap -->
+  </section>
+
+  <include src="./footer.html"></include>
+</body>
+
+</html>

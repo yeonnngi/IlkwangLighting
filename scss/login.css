@@ -1,0 +1,254 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: #222;
+  text-decoration: none;
+}
+
+body,
+html {
+  width: 100%;
+  background-color: #f8f8f8;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: auto;
+    background-color: #eee;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    width: 10px;
+    background-color: #FD8234;
+  }
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.kor {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.eng {
+  font-family: 'Poppins', sans-serif;
+}
+
+
+/* --------------- popUp ---------------  */
+.popUp_bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  display: none;
+}
+
+.popUp_box {
+  width: 400px;
+  height: 200px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  z-index: 999;
+  position: absolute;
+  top: calc(50% - 200px);
+  left: calc(50% - 200px);
+  text-align: center;
+  display: none;
+}
+
+.popUp_box i {
+  font-size: 22px;
+  color: #FD8234;
+  text-align: center;
+  padding: 10px;
+  margin-top: 35px;
+}
+
+.popUp_box p {
+  color: #261C13;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.popUp_box button {
+  width: 70px;
+  height: 35px;
+  border: none;
+  background-color: #261C13;
+  border-radius: 5px;
+  margin-top: 18px;
+  cursor: pointer;
+}
+
+.popUp_box button:hover {
+  background-color: #FD8234;
+}
+
+.popUp_box button span {
+  color: #fff;
+  font-size: 13px;
+  line-height: 37px;
+  font-weight: bold;
+}
+
+
+/* --------------- login ---------------  */
+.main {
+  width: 100%;
+  height: auto;
+  padding: 40px 0 0;
+}
+
+.wrap {
+  width: 400px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.login_title {
+  font-size: 15px;
+  margin: 170px auto 20px;
+}
+
+input::placeholder {
+  font-size: 12px;
+}
+
+.loginForm{
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.user_id,
+.user_pw {
+  width: 400px;
+  height: 50px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  margin: 0 auto 15px;
+  font-size: 14px;
+}
+
+.id_save {
+  display: flex;
+  margin: 5px auto 30px;
+}
+
+.id_save .id_save_chk {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.id_save p {
+  padding: 0 10px;
+  font-size: 13px;
+  line-height: 18px;
+  cursor: pointer;
+}
+
+.loginBtn {
+  width: 400px;
+  height: 55px;
+  background-color: #EFE8DA;
+  border: none;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 55px;
+  letter-spacing: 1px;
+  margin: 0 auto 10px;
+  cursor: pointer;
+}
+
+.loginBtn:hover {
+  background-color: #FD8234;
+  color: #fff;
+}
+
+.other_btn ul {
+  display: flex;
+}
+
+.other_btn ul li {
+  width: 130px;
+  height: 40px;
+  background-color: #261C13;
+  margin-right: 7px;
+  text-align: center;
+  line-height: 39px;
+  cursor: pointer;
+}
+
+.other_btn ul li:hover {
+  background-color: #FD8234;
+}
+
+.other_btn ul li:nth-child(3) {
+  margin-right: 0;
+}
+
+.other_btn ul li a {
+  color: #fff;
+  font-size: 13px;
+}
+
+.login_sns {
+  margin-bottom: 100px;
+}
+
+.login_sns .sns_text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px auto 40px;
+}
+
+.login_sns .sns_text .line {
+  width: 157px;
+  height: 1px;
+  background-color: #261C13;
+}
+
+.login_sns .sns_text .sns_login {
+  padding: 0 10px;
+  font-size: 13px;
+}
+
+.sns_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sns_icon .icon {
+  width: 60px;
+  height: 70px;
+  cursor: pointer;
+
+}
+
+.sns_icon .icon img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.sns_icon .naver {
+  margin-right: 40px;
+}

@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="./scss/deatil.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+  <!-- gsap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+
+  <!-- ScrollToPlugin.min.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
+
+  <!-- Swiper JS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+  <!-- user main.js연결  -->
+  <script src="./js/detail.js" defer></script>
+  <script src="./js/swiper.js" defer></script>
+
+  <title>IK by Ilkwang Lighting</title>
+</head>
+
+<body>
+  <include src="./header.html"></include>
+
+  <main class="main">
+    <div class="detailPage">
+      <div class="detail_content">
+        <div class="content_main">
+          <section class="swiper swiper_detail">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide butter on"><img src="./images/detail_AllButter_gray.jpg" alt="detail_AllButter">
+              </div>
+              <div class="swiper-slide peach"><img src="./images/detail_PeachDeepGreen_gray.jpg"
+                  alt="detail_PeachDeepGreen">
+              </div>
+              <div class="swiper-slide white"><img src="./images/detail_WhiteIceBlue_gray.jpg"
+                  alt="detail_WhiteIceBlue">
+              </div>
+            </div><!-- //swiper-wrapper -->
+            <div class="swiper-pagination detail_pagination"></div>
+
+            <div class="swiper-button-prev swiperDetailBtn"></div>
+            <div class="swiper-button-next swiperDetailBtn"></div>
+          </section><!-- //swiper_detail -->
+
+
+          <div id="tapMenu" class="tab_menu">
+            <div class="tab_menu_wrap">
+              <ul class="menu_label kor">
+                <li id="detailInfo" class="on"><a href="#detailBox">상세설명</a></li>
+                <li id="notice"><a href="#noticeBox">NOTICE</a></li>
+                <li id="review"><a href="#reviewBox">리뷰</a></li>
+                <li id="question"><a href="#questionBox">문의</a></li>
+              </ul><!-- //menu_label -->
+            </div><!-- //tab_menu_wrap -->
+
+            <div class="content">
+              <div class="tab_box">
+                <section id="detailBox" class="detail_box on">
+                  <div class="intro tab_img">
+                    <img src="./images/detail_info_imgA.jpg" alt="detail_info_imgA">
+                  </div><!-- //intro -->
+
+                  <div class="detail tab_img">
+                    <img src="./images/detail_info_imgB.jpg" alt="detail_info_imgB">
+                  </div><!-- //intro -->
+
+                  <div class="more_btn kor">상품설명 더보기 <i class="fas fa-chevron-down"></i></div>
+                </section><!-- //detail_box -->
+
+                <section id="noticeBox" class="notice_box kor">
+                  <div class="notice_wrap">
+                    <div class="address notice_list">
+                      <h3>반품하실 주소</h3>
+                      <div class="line"></div>
+                      <p class="address">대구시 달서구 성서공단북로3길7 일광전구 (우편번호 : 42710)</p>
+                    </div><!-- //address -->
+
+                    <div class="impossible notice_list">
+                      <h3>교환 및 반품이 불가능한 경우</h3>
+                      <div class="line"></div>
+                      <p>- 구매자의 과실로 제품 또는 포장이 훼손되어 상품가치가 현저히 상실된 경우</p>
+                      <p>- 차량과 같이 안정되지 않은 바닥 또는 천정에서 사용 중 발생한 제품의 파손</p>
+                      <p>- 제품의 임의 개조 및 수리 등 구매자의 책임 있는 과실로 인한 제품의 파손</p>
+                      <p>- 야외, 고온, 저온, 다습한 환경에서의 사용 및 보관 중 발생한 제품의 손상</p>
+                      <p>- 구매자의 단순 변심으로 인한 반품 요청이 제품 수령 후 7일을 경과한 경우</p>
+                      <p>- 수명을 모두 사용한 램프 교환 요청의 경우</p>
+                      <p>- 펜던트 제품 설치 후 교환 또는 반품 요청의 경우</p>
+                      <p>- 유리 제품의 자연스러운 기포 생성 현상으로 인한 교환 또는 반품 요청의 경우(수작업 블로잉 제작방식의 특징)</p>
+                      <p>- 나무 제품의 자연스러운 옹이 생성, 균일하지 않은 색상, 패턴으로 인한 교환 또는 반품 요청의 경우(모양이 일정하지 않은 자연소재의 특징)</p>
+                      <p>- 해외의 110V전압에서 사용 등 국내와 상이한 전기 환경으로 인한 제품의 파손</p>
+                      <p>- 포터블 스탠드 제품 쉐이드의 균일하지 않은 도장면으로 인한 교환 또는 반품 요청의 경우(PC사출 제작방식의 특징)</p>
+                      <p>- 포터블 스탠드 제품 쉐이드의 하단부와 같이 외관상 노출되지 않는 부분의 공정상 발생하는 그을림, 상처등으로 인한 교환 또는 반품 요청의 경우<br> &nbsp (ABS
+                        사출
+                        제작방식의
+                        특징)</p>
+                    </div><!-- //impossible -->
+
+                    <div class="attention notice_list">
+                      <h3>IK 시리즈 주의사항</h3>
+                      <div class="line"></div>
+                      <p>- AC어댑터, 전원 케이블의 플러그는 끝까지 밀어 넣어 올바르게 연결해 주십시오.</p>
+                      <p>- 본체, 충전 배터리에 강한 충격 및 압력을 주지 마십시오.</p>
+                      <p>- 제품의 표면에 가정용 유리 세정제, 시너와 같은 강력한 세정제를 사용하지 마십시오.</p>
+                    </div><!-- //attention -->
+                  </div><!-- //notice_wrap -->
+                </section><!-- //notice_box -->
+
+                <section id="reviewBox" class="review_box kor">
+                  <div class="review_box_wrap">
+                    <div class="review_title">
+                      <h3>리뷰</h3>
+                      <p>리뷰작성 <i class="fas fa-edit"></i></p>
+                    </div><!-- //review_title -->
+
+                    <div class="line"></div>
+
+                    <div class="review_img">
+                      <ul class="frame">
+                        <li><a href="#!"><img src="./images/review_01.jpg" alt="review_01"></a></li>
+                        <li><a href="#!"><img src="./images/review_02.jpg" alt="review_02"></a></li>
+                        <li><a href="#!"><img src="./images/review_03.jpg" alt="review_03"></a></li>
+                        <li><a href="#!"><img src="./images/review_04.jpg" alt="review_04"></a></li>
+                        <li><a href="#!"><img src="./images/review_05.jpg" alt="review_05"></a></li>
+                        <li><a href="#!"><img src="./images/review_06.jpg" alt="review_06"></a></li>
+                        <li><a href="#!"><img src="./images/review_07.jpg" alt="review_07"></a></li>
+                        <li><a href="#!"><img src="./images/review_08.jpg" alt="review_08"></a></li>
+                        <li><a href="#!"><img src="./images/review_09.jpg" alt="review_09"></a></li>
+                        <li><a href="#!"><img src="./images/review_010.jpg" alt="review_010"></a></li>
+                      </ul>
+                    </div><!-- //review_img -->
+
+                    <div class="review_btn">
+                      <div class="prev_btn reviewBtn">
+                        <i class="fas fa-chevron-left"></i>
+                      </div>
+
+                      <div class="next_btn reviewBtn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div><!-- //review_btn  -->
+
+                    <div id="review" class="review_list kor">
+                      <ul>
+                        <li>
+                          <div class="user_info">
+                            <p class="point">★★★★★</p>
+                            <p class="id">hello**</p>
+                            <p class="date">2023.06.01</p>
+                          </div><!-- //user_info -->
+
+                          <div class="purchase_option">
+                            <p class="option_title">옵션</p>
+                            <p class="option_value">[Color] Butter</p>
+                          </div><!-- //purchase_option -->
+
+                          <div class="review_content">
+                            <div class="content_txt">
+                              <p class="review_txt">
+                                친구 집들이 선물로 줬는데 화이트톤 가구랑 잘 어울리고 귀여워요~! 은은한 노란빛이라 따뜻한 느낌이에요
+                              </p>
+                            </div>
+
+                            <div class="content_img">
+                              <img src="./images/review_01.jpg" alt="review_01_view">
+                            </div>
+                          </div><!-- //review_content -->
+                        </li>
+
+                        <li>
+                          <div class="user_info">
+                            <p class="point">★★★★★</p>
+                            <p class="id">jelly**</p>
+                            <p class="date">2023.05.29</p>
+                          </div><!-- //user_info -->
+
+                          <div class="purchase_option">
+                            <p class="option_title">옵션</p>
+                            <p class="option_value">[Color] Butter</p>
+                          </div><!-- //purchase_option -->
+
+                          <div class="review_content">
+                            <div class="content_txt">
+                              <p class="review_txt">
+                                사이즈부터 색상까지 마음에 쏙 들어요 유리가 아니라 깨질위험 없어서 안심되구요 이거 하나로 인테리어가 살아나요
+                              </p>
+                            </div>
+
+                            <div class="content_img">
+                              <img src="./images/review_02.jpg" alt="review_01_view">
+                            </div>
+                          </div><!-- //review_content -->
+                        </li>
+
+                        <li>
+                          <div class="user_info">
+                            <p class="point">★★★★</p>
+                            <p class="id">cookie**</p>
+                            <p class="date">2023.05.15</p>
+                          </div><!-- //user_info -->
+
+                          <div class="purchase_option">
+                            <p class="option_title">옵션</p>
+                            <p class="option_value">[Color] Butter</p>
+                          </div><!-- //purchase_option -->
+
+                          <div class="review_content">
+                            <div class="content_txt">
+                              <p class="review_txt">
+                                선물했는데 친구가 엄청 만족스러워하네요 저도 하나 사려구요
+                              </p>
+                            </div>
+
+                            <div class="content_img">
+                              <img src="./images/review_03.jpg" alt="review_01_view">
+                            </div>
+                          </div><!-- //review_content -->
+                        </li>
+
+                        <li>
+                          <div class="user_info">
+                            <p class="point">★★★★★</p>
+                            <p class="id">new**</p>
+                            <p class="date">2023.04.28</p>
+                          </div><!-- //user_info -->
+
+                          <div class="purchase_option">
+                            <p class="option_title">옵션</p>
+                            <p class="option_value">[Color] Butter</p>
+                          </div><!-- //purchase_option -->
+
+                          <div class="review_content">
+                            <div class="content_txt">
+                              <p class="review_txt">
+                                며칠 고민하다가 너무 아른거려서 결제했는데 진작에 구매할 걸 그랬어요! 방이든 거실이든 어디에 둬도 어울리고 예쁩니다!
+                              </p>
+                            </div>
+
+                            <div class="content_img">
+                              <img src="./images/review_04.jpg" alt="review_01_view">
+                            </div>
+                          </div><!-- //review_content -->
+                        </li>
+
+                        <li>
+                          <div class="user_info">
+                            <p class="point">★★★★★</p>
+                            <p class="id">jeans**</p>
+                            <p class="date">2023.04.16</p>
+                          </div><!-- //user_info -->
+
+                          <div class="purchase_option">
+                            <p class="option_title">옵션</p>
+                            <p class="option_value">[Color] Butter</p>
+                          </div><!-- //purchase_option -->
+
+                          <div class="review_content">
+                            <div class="content_txt">
+                              <p class="review_txt">
+                                이사온집에서 잘쓰고 있어요 화이트 테이블에 너무 어울리는 은은한 조명이고
+                                밥먹을때, 노트북할때 자주 사용합니다
+                                다만 한달 사용하면서 벽쪽방향에 있던 부분이라 놓쳣던거같은데 얼룩같은게 있었네요...유리 마감이 잘못된건지...검수만 꼼꼼히 해주셨음 좋았을것 같아요
+                              </p>
+                            </div>
+
+                            <div class="content_img">
+                              <img src="./images/review_05.jpg" alt="review_01_view">
+                            </div>
+                          </div><!-- //review_content -->
+                        </li>
+
+                        <li>
+                          <div class="user_info">
+                            <p class="point">★★★★★</p>
+                            <p class="id">hani**</p>
+                            <p class="date">2023.04.04</p>
+                          </div><!-- //user_info -->
+
+                          <div class="purchase_option">
+                            <p class="option_title">옵션</p>
+                            <p class="option_value">[Color] Butter</p>
+                          </div><!-- //purchase_option -->
+
+                          <div class="review_content">
+                            <div class="content_txt">
+                              <p class="review_txt">
+                                친구가 생일 선물로 픽해서 구입했는데 저도 사고 싶어요 탐나요 일광전구… 성수동 팝업도 잘 봤습니다
+                              </p>
+                            </div>
+
+                            <div class="content_img">
+                              <img src="./images/review_06.jpg" alt="review_01_view">
+                            </div>
+                          </div><!-- //review_content -->
+                        </li>
+
+                        <li>
+                          <div class="user_info">
+                            <p class="point">★★★★★</p>
+                            <p class="id">minji**</p>
+                            <p class="date">2023.03.31</p>
+                          </div><!-- //user_info -->
+
+                          <div class="purchase_option">
+                            <p class="option_title">옵션</p>
+                            <p class="option_value">[Color] Butter</p>
+                          </div><!-- //purchase_option -->
+
+                          <div class="review_content">
+                            <div class="content_txt">
+                              <p class="review_txt">
+                                상품 퀄리티 디자인 모두 만족하였습니다.
+                              </p>
+                            </div>
+
+                            <div class="content_img">
+                              <img src="./images/review_07.jpg" alt="review_01_view">
+                            </div>
+                          </div><!-- //review_content -->
+                        </li>
+
+                        <li>
+                          <div class="user_info">
+                            <p class="point">★★★★</p>
+                            <p class="id">hearin**</p>
+                            <p class="date">2023.02.02</p>
+                          </div><!-- //user_info -->
+
+                          <div class="purchase_option">
+                            <p class="option_title">옵션</p>
+                            <p class="option_value">[Color] Butter</p>
+                          </div><!-- //purchase_option -->
+
+                          <div class="review_content">
+                            <div class="content_txt">
+                              <p class="review_txt">
+                                맘에 들어요 귀여워용 다만 조명 킬때 조금 불편해요
+                              </p>
+                            </div>
+
+                            <div class="content_img">
+                              <img src="./images/review_08.jpg" alt="review_01_view">
+                            </div>
+                          </div><!-- //review_content -->
+                        </li>
+
+                        <li>
+                          <div class="user_info">
+                            <p class="point">★★★★★</p>
+                            <p class="id">dani**</p>
+                            <p class="date">2023.01.31</p>
+                          </div><!-- //user_info -->
+
+                          <div class="purchase_option">
+                            <p class="option_title">옵션</p>
+                            <p class="option_value">[Color] Butter</p>
+                          </div><!-- //purchase_option -->
+
+                          <div class="review_content">
+                            <div class="content_txt">
+                              <p class="review_txt">
+                                너무 귀엽다 배송도 안전하게왔고 너무 귀엽습니다 가격이 비싸지만 그만큼 만족쿠
+                              </p>
+                            </div>
+
+                            <div class="content_img">
+                              <img src="./images/review_09.jpg" alt="review_01_view">
+                            </div>
+                          </div><!-- //review_content -->
+                        </li>
+
+                        <li>
+                          <div class="user_info">
+                            <p class="point">★★★★★</p>
+                            <p class="id">hyein**</p>
+                            <p class="date">2023.01.01</p>
+                          </div><!-- //user_info -->
+
+                          <div class="purchase_option">
+                            <p class="option_title">옵션</p>
+                            <p class="option_value">[Color] Butter</p>
+                          </div><!-- //purchase_option -->
+
+                          <div class="review_content">
+                            <div class="content_txt">
+                              <p class="review_txt">
+                                서랍장 위에 뒀는데,오브제처럼 예쁘네요 불밝기 조절도 잘되고 빛도 밝아서 좋습니다. 버터색이 예쁘네요
+                              </p>
+                            </div>
+
+                            <div class="content_img">
+                              <img src="./images/review_010.jpg" alt="review_01_view">
+                            </div>
+                          </div><!-- //review_content -->
+                        </li>
+                      </ul>
+                    </div><!-- //review_list -->
+                  </div><!-- //review_box_wrap -->
+                </section><!-- //review_box -->
+
+                <section class="question_box kor">
+                  <div id="questionBox" class="question_box_wrap">
+                    <div class="question_title">
+                      <h3>문의</h3>
+                      <p>문의하기 <i class="fas fa-edit"></i></p>
+                    </div><!-- //question_title -->
+
+                    <div class="line"></div>
+
+                    <div class="que_category">
+                      <div>ALL &nbsp | &nbsp</div>
+                      <div>&nbsp상품문의 &nbsp | &nbsp</div>
+                      <div>&nbsp배송문의 &nbsp | &nbsp</div>
+                      <div>&nbsp기타</div>
+                    </div><!-- //que_category -->
+
+                    <div class="table_title">
+                      <div class="title_title">제목</div>
+                      <div class="title_user">작성자</div>
+                      <div class="title_status">작성일</div>
+                      <div class="title_date">답변상태</div>
+                    </div>
+
+                    <div class="line_thin"></div>
+
+                    <div class="inquire_list">
+                      <ul>
+                        <li>
+                          <div class="short">
+                            <div class="title">
+                              <p>이 제품 디머 스위치가 포함된 제품인거죠?!</p>
+                            </div>
+
+                            <div class="user">
+                              <p>lisa**</p>
+                            </div>
+
+                            <div class="date">
+                              <p>2023.06.02</p>
+                            </div>
+
+                            <div class="status">
+                              <p>yes</p>
+                            </div>
+                          </div>
+
+                          <div class="answer_area">
+                            <div class="answer">
+                              <span class="closeAnswer"><i class="fas fa-times"></i></span>
+                              <div>답변</div>
+                              <p>안녕하세요, 'We make light' 일광전구입니다.<br><br>
+                                문의 주신 SNOWMAN22 SOLID Table Stand는 디머 스위치가 적용된 제품입니다.
+                                <br><br>
+                                감사합니다.
+                              </p>
+                            </div><!-- //answer -->
+                          </div><!-- //answer_area -->
+                        </li>
+                      </ul>
+                    </div><!-- //inquire_list -->
+
+                    <!-- <li>
+                          <div class="status">
+                            <p>답변완료</p>
+                          </div>
+                          <div class="title">
+                            <p>조명상부는 재질이 플라스틱인가요? 유리인가요?</p>
+                          </div>
+                          <div class="user">
+                            <p>jenni**</p>
+                          </div>
+                          <div class="date">
+                            <p>2023.05.28</p>
+                          </div>
+                        </li>
+
+                        <li>
+                          <div class="status">
+                            <p>답변완료</p>
+                          </div>
+                          <div class="title">
+                            <p>안녕하세요 현재 스노우맨 화이트 쓰고있는데 조명이 주황색인데 흰색으로 사용</p>
+                          </div>
+                          <div class="user">
+                            <p>jisoo**</p>
+                          </div>
+                          <div class="date">
+                            <p>2023.05.01</p>
+                          </div>
+                        </li>
+
+                        <li>
+                          <div class="status">
+                            <p>답변완료</p>
+                          </div>
+                          <div class="title">
+                            <p>서울리빙페어에서 판매한 포터블 제품은 온라인 스토어에 언제 입고 되나요..?
+                            </p>
+                          </div>
+                          <div class="user">
+                            <p>roze**</p>
+                          </div>
+                          <div class="date">
+                            <p>2023.04.15</p>
+                          </div>
+                        </li> -->
+
+
+                  </div><!-- //questionBox -->
+                </section><!-- //question_box -->
+              </div><!-- //tab_box -->
+
+            </div><!-- //content -->
+          </div><!-- //tab_menu -->
+        </div><!-- //content_main -->
+      </div><!-- //detail_content -->
+
+
+      <div class="content_side">
+        <section class="side_info kor">
+          <div class="side_info_wrap">
+            <div class="product_info">
+              <h4 class="">IK 테이블 스탠드</h4>
+              <h3 class="eng">SNOWMAN22 SOLID Table Stand</h3>
+              <span>230,000원</span>
+
+              <div class="select_option kor">
+                <h5>[필수] 옵션을 선택해 주세요</h5>
+              </div>
+
+              <div class="color">
+                <div class="butter"></div>
+                <div class="pink"></div>
+                <div class="white"></div>
+              </div><!-- //color -->
+            </div><!-- //product_info -->
+
+
+            <div class="option">
+              <h5>추가 구성상품</h5>
+              <div class="option_switch_box">
+                <div class="option_switch">
+                  <div class="img_butter option_img on"><img src="./images/detail_option_butter.jpg"
+                      alt="detail_option_butter"></div>
+                  <div class="img_green option_img"><img src="./images/detail_option_green.jpg"
+                      alt="detail_option_green"></div>
+                  <div class="img_green option_img"><img src="./images/detail_option_orange.jpg"
+                      alt="detail_option_orange">
+                  </div>
+                  <div class="img_orange option_img"><img src="./images/detail_option_black.jpg"
+                      alt="detail_option_black"></div>
+                </div><!-- //option_switch -->
+              </div><!-- //option_switch_box -->
+
+
+              <div class="option_txt">
+                <div class="option_butter optionText on">
+                  <p class="name eng">IK Dimmer Switch Butter</p>
+                  <p class="price kor">20,000원</p>
+                </div><!-- //slide_butter -->
+
+                <div class="option_green optionText">
+                  <p class="eng">IK Dimmer Switch Deep Green</p>
+                  <p class="price kor">20,000원</p>
+                </div><!-- //slide_green -->
+
+                <div class="option_orange optionText">
+                  <p class="eng">IK Dimmer Switch Orange</p>
+                  <p class="price kor">20,000원</p>
+                </div><!-- //slide_orange -->
+
+                <div class="option_black optionText">
+                  <p class="eng">IK Dimmer Switch Black</p>
+                  <p class="price kor">20,000원</p>
+                </div>
+              </div><!-- //option_txt -->
+
+              <div class="option_color">
+                <div class="butter color_chip on"></div>
+                <div class="green color_chip"></div>
+                <div class="orange color_chip"></div>
+                <div class="black color_chip"></div>
+              </div><!-- //option_color -->
+            </div><!-- //option -->
+
+
+            <div class="buying_info kor">
+              <div class="shipment">
+                <p>배송비</p>
+                <ul>
+                  <li>150,000원 이상 구매시 무료배송(미만시 배송비 3300원 발생)</li>
+                  <li>제주도를 포함한 도서 / 산간지역은 추가 배송비 발생</li>
+                </ul>
+              </div><!-- //shipment -->
+
+              <div class="card_benefit kor">
+                <p>카드혜택</p>
+                <div class="more_mark"><i class="far fa-question-circle"></i></div>
+
+                <div class="card_popup">
+                  <h3><i class="fas fa-credit-card"></i> 카드혜택 안내</h3>
+                  <h4>5만원 이상 결제 시</h4>
+                  <div class="line_thin"></div>
+                  <ul>
+                    <li>
+                      <p>우리카드</p>
+                      <p>2-6개월 무이자</p>
+                    </li>
+
+                    <li>
+                      <p>하나카드</p>
+                      <p>2-3개월 무이자</p>
+                    </li>
+
+                    <li>
+                      <p>롯데카드</p>
+                      <p>2-3개월 무이자</p>
+                    </li>
+
+                    <li>
+                      <p>현대카드</p>
+                      <p>2-3개월 무이자</p>
+                    </li>
+                  </ul>
+                </div><!-- //card_popup -->
+              </div><!-- //card_benefit -->
+            </div><!-- //buying_info -->
+
+            <div class="allPrice kor">
+              <p class="priceTxt">총 상품금액(수량)</p>
+              <div class="count">
+                <input id="sellPrice" type='hidden' value='230000' readonly="readonly" />
+                <input id="add" class="hover" type='button' onclick='count("plus")' value='+' />
+                <input id="count" type="text" value="1" size="3" />
+                <input id="minus" class="hover" type="button" onclick='count("minus")' value='-' />
+                <input id="result" type="text" size="11" value='230000' readonly="readonly">
+                <p class="won">원</p>
+
+                <div class="finalCount kor">
+                  <input id="finalCount" type="text" value="1" readonly="readonly">
+                  <p>개</p>
+                </div>
+              </div>
+            </div><!-- //allPrice -->
+
+            <div class="shopping_button kor">
+              <div class="buying_btn">구매하기</div>
+              <div class="cart_btn">장바구니</div>
+            </div><!-- //shopping_button -->
+          </div><!-- //side_info_wrap -->
+
+
+          <div class="side_notice kor">
+            <div class="refund_info">
+              <div id="refundTitle" class="title">
+                <h4>제품 문의 및 교환/반품 안내</h4>
+              </div>
+
+              <div class="openClose">
+                <div id="refundOpen" class="plus_btn"><i class="fas fa-plus"></i></div>
+                <div id="refundClose" class="minus_btn"><i class="fas fa-minus"></i></div>
+              </div>
+
+              <div id="refundHide" class="hide">
+                <p>제품하자나 교환, 반품을 원하실 경우에는 고객 센터로 연락 주시면 처리해 드리겠습니다.<br><br>
+
+                  교환, 반품은 제품수령 후 7일이내 고객 센터로 신청하여야 합니다.<br><br>
+
+                  전구 제품은 유리와 필라멘트로 구성되어 택배 운송중 취급 부주의에 의한 파손이나, 고장이 발생 할 수 있습니다. 운송중 발생한 파손이나 고장은 고객센터로 연락주시면,
+                  신속하게
+                  교환
+                  또는
+                  대체 해드리겠습니다.<br><br>
+
+                  주문실수, 단순변심에 의한 반품 또는 교환시 택배비용은 고객님 부담이오니 잘 확인하시어 주문바랍니다.</p>
+              </div>
+            </div><!-- //refund_info -->
+
+
+            <div class="shipment_info">
+              <div id="shipmentTitle" class="title">
+                <h4>배송안내</h4>
+              </div>
+
+              <div class="openClose">
+                <div id="shipmentOpen" class="plus_btn"><i class="fas fa-plus"></i></div>
+                <div id="shipmentClose" class="minus_btn"><i class="fas fa-minus"></i></div>
+              </div>
+
+              <div id="shipmentHide" class="hide">
+                <p>오후 1시까지 입금확인 된 주문 건은 당일 발송(주말/공휴일 제외)이 가능하며<br> 이후 주문 건은 익일발송됩니다.<br><br> 단, 주문 접수 후 조립하는 스탠드,
+                  펜단트
+                  제품은 <br> 오후 1시까지 입금확인 된 주문 건은 익일 발송하며(주말/공휴일 제외)<br> 이후 주문 건은 2일 후 발송됩니다.<br><br> 택배사 : 한진택배
+                  (hanex.hanjin.co.kr / 1588-0011)<br><br>
+                  배송비 : 3,300원 (도서 산간지역 및 제주도는 요금이 추가됩니다.)</p>
+              </div>
+            </div><!-- //shipment_info -->
+
+
+            <div class="cs_info">
+              <div id="csTitle" class="title">
+                <h4>일광로틱</h4>
+              </div>
+
+              <div class="openClose">
+                <div id="csOpen" class="plus_btn"><i class="fas fa-plus"></i></div>
+                <div id="csClose" class="minus_btn"><i class="fas fa-minus"></i></div>
+              </div>
+
+              <div id="csHide" class="hide">
+                <p>CS center : 053-581-1076 / light@iklamp.co.kr<br>
+                  상담시간 : 평일 9:00 ~ 16:00 (주말/공휴일은 휴무입니다.)<br><br>
+                  무통장 입금 : 기업은행 김홍도 482-024036-01-039</p>
+              </div>
+            </div><!-- //cs_info -->
+
+          </div><!-- //side_notice -->
+        </section><!-- //side_info -->
+      </div><!-- //content_side -->
+
+
+    </div><!-- //detailPage -->
+  </main><!-- //main -->
+
+  <section class="history">
+    <div class="history_popup eng">
+      <h4>SHOPPING HISTORY</h4>
+      <div class="history_hide"><i class="fas fa-times"></i></div>
+      <p class="today">TODAY</p>
+
+      <div class="shopping_history">
+        <div class="list_01 history_list kor">
+          <div class="list_img">
+            <img src="./images/history_01.jpg" alt="history_01">
+          </div>
+          <div class="list_txt">
+            <div class="list_delete"><i class="fas fa-times"></i></div>
+            <p>IK 시리즈 ACORN22 Table Stand 5Colors</p>
+            <span>160,000원</span>
+          </div>
+        </div><!-- //list01 -->
+      </div><!-- //shopping_history-->
+
+      <div id="deleteAll" class="deleteAll kor">
+        <p>전체 삭제</p>
+      </div><!-- //deleteAll -->
+    </div><!-- //history_popup -->
+  </section><!-- //history -->
+
+  <include src="./footer.html"></include>
+
+  <div id="topBtn" class="top_btn"><i class="fas fa-chevron-up"></i></div>
+  <div id="historyBtn" class="history_btn"><i class="fas fa-history"></i></div>
+
+</body>
+
+</html>

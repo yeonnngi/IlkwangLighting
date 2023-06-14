@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0 maximum-scale=1.5, minimum-scale=1.0, user-scalable=no">
+  <link rel=" stylesheet" href="./scss/find_id.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+  <title>login_join</title>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      const body = document.querySelector('body');
+      const userName = document.getElementById('user_name');
+      const userTel = document.getElementById('user_tel');
+      const findIdBtn = document.getElementById('findIdBtn');
+
+      const userList = [{
+        id: "green01",
+        name: "유재석",
+        tel: "01012345678"
+      }, {
+        id: "green02",
+        name: "조세호",
+        tel: "01055556666"
+      }, {
+        id: "green03",
+        name: "이영지",
+        tel: "01011112222"
+      }, {
+        id: "green04",
+        name: "박재범",
+        tel: "01022223333"
+      }, {
+        id: "green05",
+        name: "홍진경",
+        tel: "01099998888"
+      }]
+
+      findIdBtn.addEventListener('click', () => {
+        const failBg = document.getElementById('failBg');
+        const failBox = document.getElementById('failBox');
+        const failBtn = document.getElementById('failBtn');
+        const foundId = document.getElementById('foundId');
+        const successBg = document.getElementById('successBg');
+        const successBox = document.getElementById('successBox');
+        const successBtn = document.getElementById('successBtn');
+
+        for (let i = 0; i < userList.length; i++) {
+          if (userName.value == userList[i].name && userTel.value == userList[i].tel) {
+            window.scrollTo(0, 0);
+            body.style.overflow = 'hidden';
+            successBg.style.display = 'block';
+            foundId.value = userList[i].id;
+            successBox.style.display = 'block';
+
+            successBtn.addEventListener('click', () => {
+              successBg.style.display = 'none';
+              successBox.style.display = 'none';
+              body.style.overflow = 'visible';
+              userName.value = "";
+              userTel.value = "";
+            });
+            break;
+          }
+          if (i == userList.length - 1) {
+            window.scrollTo(0, 0);
+            body.style.overflow = 'hidden';
+            failBg.style.display = 'block';
+            failBox.style.display = 'block';
+
+            failBtn.addEventListener('click', () => {
+              failBg.style.display = 'none';
+              failBox.style.display = 'none';
+              body.style.overflow = 'visible';
+              userName.value = "";
+              userTel.value = "";
+              userName.focus();
+              return true;
+            })
+          }
+        }
+      });
+    });
+  </script>
+</head>
+
+<body>
+ 
+  <!-- ------------------ popup ------------------ -->
+  <section class="popSuccess">
+    <div id="successBg" class="popBg successBg"></div>
+    <div id="successBox" class="popBox successBox">
+      <i class="fas fa-check-circle"></i>
+      <p>회원님의 아이디는 </p>
+      <input type="text" name="id" id="foundId" class="foundId">
+      <p> 입니다.</p>
+      <button id="successBtn" class="successBtn"><span>확인</span></button>
+    </div><!-- //popUp_id -->
+  </section>
+
+  <section class="popFail">
+    <div id="failBg" class="popBg failBg"></div>
+    <div id="failBox" class="popBox failBox">
+      <i class="fas fa-exclamation-circle"></i>
+      <p>입력하신 정보와<br />일치하는 아이디가 없습니다.</p>
+      <button id="failBtn" class="failBtn"><span>확인</span></button>
+    </div> <!-- //popUp_pw  -->
+  </section>
+  <!-- ------------------ //popup ------------------ -->
+
+  <include src="./header.html"></include>
+
+  <!-- ------------------ find_id ------------------ -->
+
+  <section class="main">
+    <div class="wrap kor">
+      <div class="find_id kor">
+        <h1>아이디 찾기</h1>
+      </div>
+
+      <form name="loginForm" action="#" method="get">
+        <ul class="findId kor">
+          <li>
+            <label for="user_name">이름</label>
+            </br>
+            <input type="text" name="name" id="user_name" class="user_name" placeholder="이름을 입력해주세요."
+              onfocus="this.placeholder=''" onblur="this.placeholder='이름을 입력해주세요.'" required>
+          </li>
+
+          <li class="tel">
+            <label for="user_tel">전화번호</label>
+            <input type="text" name="tel" id="user_tel" class="user_tel" placeholder="전화번호를 입력해주세요. ( - 없이 숫자만 입력)"
+              onfocus="this.placeholder=''" onblur="this.placeholder='전화번호를 입력해주세요. ( - 생략)'" size="11" required>
+          </li>
+        </ul>
+
+        <button type="button" id="findIdBtn" class="findId_btn kor">아이디 찾기</button>
+
+        <div class="other_btn kor">
+          <ul>
+            <li class="findPw_btn btn">
+              <a href="./find_pw.html">비밀번호 찾기</a>
+            </li>
+            <li class="login_btn btn">
+              <a href="./login.html">로그인</a>
+            </li>
+          </ul>
+        </div><!-- //other_btn -->
+
+
+        <div class="bottom_line_01"></div>
+    </div><!-- //wrap -->
+  </section>
+
+  <include src="./footer.html"></include>
+</body>
+
+</html>
