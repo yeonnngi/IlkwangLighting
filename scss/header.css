@@ -86,7 +86,7 @@ html {
   width: 520px;
   height: calc(100vh - 105px);
   position: absolute;
-  top: 14px;
+  top: 15px;
   left: -869px;
   transition: all 0.3s;
 }

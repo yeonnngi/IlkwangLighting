@@ -118,6 +118,67 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"js/detail.js":[function(require,module,exports) {
+/* -------------- lnb_menu -------------- */
+document.addEventListener('DOMContentLoaded', function () {
+  var ourStory = document.querySelector('.tabMenu_label .lnb_detail .our_story');
+  var support = document.querySelector('.tabMenu_label .lnb_detail .support');
+  var storyDetail = document.querySelector('.tabMenu_label .lnb_detail .story_detail_bg');
+  var supportDetail = document.querySelector('.tabMenu_label .lnb_detail .support_detail_bg');
+  ourStory.addEventListener('mouseover', function () {
+    storyDetail.style.display = 'block';
+  });
+  ourStory.addEventListener('mouseout', function () {
+    storyDetail.style.display = 'none';
+  });
+  storyDetail.addEventListener('mouseover', function () {
+    storyDetail.style.display = 'block';
+  });
+  storyDetail.addEventListener('mouseout', function () {
+    storyDetail.style.display = 'none';
+  });
+  support.addEventListener('mouseover', function () {
+    supportDetail.style.display = 'block';
+  });
+  support.addEventListener('mouseout', function () {
+    supportDetail.style.display = 'none';
+  });
+  supportDetail.addEventListener('mouseover', function () {
+    supportDetail.style.display = 'block';
+  });
+  supportDetail.addEventListener('mouseout', function () {
+    supportDetail.style.display = 'none';
+  });
+});
+
+/* -------------- lnbShop_event --------------*/
+$(function () {
+  var shop = $('.tabMenu_label .lnb_main .shop');
+  var shopDetail = $('.tabMenu_label .lnb_main .shop_detail_bg');
+  shop.mouseover(function () {
+    shopDetail.stop().animate({
+      left: 0
+    }, 300);
+  }); //lnbShop_mouseover_event
+
+  shop.mouseout(function () {
+    shopDetail.stop().animate({
+      left: -869
+    }, 300);
+  }); //lnbShop_mouseout_event
+
+  shopDetail.mouseover(function () {
+    shopDetail.stop().animate({
+      left: 0
+    }, 300);
+  }); //lnbShopDetail_mouseover_event
+
+  shopDetail.mouseout(function () {
+    shopDetail.stop().animate({
+      left: -869
+    }, 300);
+  }); //lnbShopDetail_mouseout_event
+});
+
 /* -------------- product_info -------------- */
 document.addEventListener('DOMContentLoaded', function () {
   var selectColor = document.querySelectorAll('.product_info .color div');
@@ -272,7 +333,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var topBtn = document.querySelector('.top_btn');
   var header = document.getElementById('header');
   var tabMenu = document.querySelector('.tabMenu_wrap');
-  var tabMenuHeader = document.querySelector('.tabMenu_headerWrap');
+  var tabMenuHeader = document.querySelector('.tabMenu_header');
   var detailArea = document.getElementById('detail_content');
   detailArea.addEventListener('scroll', function () {
     if (detailArea.scrollTop < 400) {
@@ -590,7 +651,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58798" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53287" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
