@@ -1,140 +1,161 @@
 /* -------------- issue_contents -------------- */
-/* 
-const interior = document.querySelector('.space_box .img_left .interior')
-const interiorLi = document.querySelector('.space_box .img_left .interior li')
-const product = document.querySelector('.space_box .img_right .product')
-const beddingLi = document.querySelector('.space_box .img_left .bedding li')
-const beddingRi = document.querySelector('.space_box .img_right .bedding li')
-const livingLi = document.querySelector('.space_box .img_left .living li')
-const livingRi = document.querySelector('.space_box .img_right .living li')
-const diningLi = document.querySelector('.space_box .img_left .dining li')
-const diningRi = document.querySelector('.space_box .img_right .dining li')
-const kitchenLi = document.querySelector('.space_box .img_left .kitchen li')
-const kitchenRi = document.querySelector('.space_box .img_right .kitchen li')
-const deskLi = document.querySelector('.space_box .img_left .desk li')
-const deskRi = document.querySelector('.space_box .img_right .desk li')
- */
+document.addEventListener('DOMContentLoaded', () => {
+
+  const tabLi = document.querySelectorAll('.space_wrap .space_label li');
+  const product = document.querySelectorAll('.space_box .img_right .product');
+  const pBeddingLi = document.querySelectorAll('.space_box .img_right .bedding li');
+  const pLivingLi = document.querySelectorAll('.space_box .img_right .living li');
+  const pDiningLi = document.querySelectorAll('.space_box .img_right .dining li');
+  const pKitchenLi = document.querySelectorAll('.space_box .img_right .kitchen li');
+  const pDeskLi = document.querySelectorAll('.space_box .img_right .desk li');
+  const interior = document.querySelectorAll('.space_box .img_left .interior');
+  const interiorLi = document.querySelectorAll('.space_box .img_left .interior li');
+  const iBeddingLi = document.querySelectorAll('.space_box .img_left .bedding li');
+  const iLivingLi = document.querySelectorAll('.space_box .img_left .living li');
+  const iDiningLi = document.querySelectorAll('.space_box .img_left .dining li');
+  const iKitchenLi = document.querySelectorAll('.space_box .img_left .kitchen li');
+  const iDeskLi = document.querySelectorAll('.space_box .img_left .desk li');
+
+
+  tabLi.forEach((tab, i) => {
+    tab.addEventListener('click', function () {
+      product.forEach((item) => {
+        item.classList.remove('right_on');
+        product[i].classList.add('right_on');
+      })
+
+      interior.forEach((item) => {
+        item.classList.remove('ul_on');
+        interior[i].classList.add('ul_on');
+      })
+
+      tabLi.forEach((item) => {
+        item.classList.remove('on');
+        tabLi[i].classList.add('on')
+      })
+    });
+  });
+
+  pBeddingLi.forEach((item, i) => {
+    item.addEventListener('mouseover', function () {
+      iBeddingLi.forEach((item) => {
+        item.classList.remove('li_on');
+        iBeddingLi[i].classList.add('li_on');
+      })
+    });
+  });
+
+  pLivingLi.forEach((item, i) => {
+    item.addEventListener('mouseover', function () {
+      iLivingLi.forEach((item) => {
+        item.classList.remove('li_on');
+        iLivingLi[i].classList.add('li_on');
+      })
+    });
+  });
+
+  pDiningLi.forEach((item, i) => {
+    item.addEventListener('mouseover', function () {
+      iDiningLi.forEach((item) => {
+        item.classList.remove('li_on');
+        iDiningLi[i].classList.add('li_on');
+      })
+    });
+  });
+
+  pKitchenLi.forEach((item, i) => {
+    item.addEventListener('mouseover', function () {
+      iKitchenLi.forEach((item) => {
+        item.classList.remove('li_on');
+        iKitchenLi[i].classList.add('li_on');
+      })
+    });
+  });
+
+  pDeskLi.forEach((item, i) => {
+    item.addEventListener('mouseover', function () {
+      iDeskLi.forEach((item) => {
+        item.classList.remove('li_on');
+        iDeskLi[i].classList.add('li_on');
+      })
+    });
+  });
 
 
 
-const interior = $('.space_box .img_left .interior')
-const interiorLi = $('.space_box .img_left .interior li')
-const product = $('.space_box .img_right .product')
-const beddingLi = $('.space_box .img_left .bedding li')
-const beddingRi = $('.space_box .img_right .bedding li')
-const livingLi = $('.space_box .img_left .living li')
-const livingRi = $('.space_box .img_right .living li')
-const diningLi = $('.space_box .img_left .dining li')
-const diningRi = $('.space_box .img_right .dining li')
-const kitchenLi = $('.space_box .img_left .kitchen li')
-const kitchenRi = $('.space_box .img_right .kitchen li')
-const deskLi = $('.space_box .img_left .desk li')
-const deskRi = $('.space_box .img_right .desk li')
+  /* -------------- top_btn -------------- */
+  const topBtn = document.querySelector('.top_btn')
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      gsap.to(topBtn, 0.3, {
+        opacity: 1
+      })
+    } else {
+      gsap.to(topBtn, 0.3, {
+        opacity: 0
+      })
+    }
+  }); //topBtn_event
 
 
-beddingRi.mouseover(function () {
-  index = $(this).index()
+  topBtn.addEventListener('click', () => {
+    gsap.to(window, 0.5, {
+      scrollTo: 0
+    });
+  });
 
-  beddingLi.removeClass('li_on')
-  beddingLi.eq(index).addClass('li_on')
+
+
+  /* -------------- shopping_history -------------- */
+  const historyBtn = document.querySelector('.history_btn')
+  const historyPopup = document.querySelector('.history_popup')
+  const hideBtn = document.querySelector('.history_hide')
+  const historyList = document.querySelector('.shopping_history .history_list')
+  const deleteBtn = document.querySelector('.list_delete')
+  const deleteAll = document.querySelector('.deleteAll')
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      gsap.to(historyBtn, 0.3, {
+        opacity: 1
+      })
+    } else {
+      gsap.to(historyBtn, 0.3, {
+        opacity: 0
+      })
+    }
+  }); //historyBtn_event
+
+  historyBtn.addEventListener('click', () => {
+    historyPopup.style.display = 'block';
+  });
+
+  hideBtn.addEventListener('click', () => {
+    historyPopup.style.display = 'none';
+  });
+
+  historyList.addEventListener('mouseover', () => {
+    deleteBtn.style.display = 'block';
+  });
+
+  historyList.addEventListener('mouseout', () => {
+    deleteBtn.style.display = 'none';
+  });
+
+  deleteBtn.addEventListener('mouseover', () => {
+    deleteBtn.style.color = '#191919';
+  });
+
+  deleteBtn.addEventListener('mouseout', () => {
+    deleteBtn.style.color = '#ccc';
+  });
+
+  deleteBtn.addEventListener('click', () => {
+    historyList.style.display = 'none';
+  });
+
+  deleteAll.addEventListener('click', () => {
+    historyList.style.display = 'none';
+  });
 });
-
-livingRi.mouseover(function () {
-  index = $(this).index()
-
-  livingLi.removeClass('li_on')
-  livingLi.eq(index).addClass('li_on')
-});
-
-diningRi.mouseover(function () {
-  index = $(this).index()
-
-  diningLi.removeClass('li_on')
-  diningLi.eq(index).addClass('li_on')
-});
-
-kitchenRi.mouseover(function () {
-  index = $(this).index()
-
-  kitchenLi.removeClass('li_on')
-  kitchenLi.eq(index).addClass('li_on')
-});
-
-deskRi.mouseover(function () {
-  index = $(this).index()
-
-  deskLi.removeClass('li_on')
-  deskLi.eq(index).addClass('li_on')
-});
-//issue_contents
-
-const tabLi = $('.space_wrap .space_label li')
-let index = 0
-
-tabLi.click(function () {
-  tabLi.removeClass('on')
-  $(this).addClass('on')
-
-  index = $(this).index()
-
-  interior.removeClass('ul_on');
-  interior.eq(index).addClass('ul_on');
-  product.removeClass('right_on');
-  product.eq(index).addClass('right_on');
-});
-
-/* -------------- top_btn -------------- */
-
-$('.top_btn').click(function (e) {
-  e.preventDefault()
-  $('html, body').stop().animate({
-    scrollTop: 0
-  }, 500)
-}); //btn_top_click_event
-
-
-
-/* -------------- shopping_history -------------- */
-const historyPopup = $('.history_popup')
-const historyBtn = $('.history_btn')
-const hideBtn = $('.history_hide')
-const shoppingHistory = $('.shopping_history')
-const historyList = $('.shopping_history .history_list')
-const deleteBtn = $('.list_delete')
-const deleteAll = $('.deleteAll')
-
-historyBtn.click(function () {
-  historyPopup.stop().animate({
-    right: 0
-  }, 100);
-}); //historyBtn_click_event
-
-hideBtn.click(function () {
-  historyPopup.stop().animate({
-    right: -480
-  }, 100);
-}); //historyBtn_click_event
-
-historyList.mouseover(function () {
-  deleteBtn.css('display', 'block');
-}); //historyBtn_click_event
-
-historyList.mouseout(function () {
-  deleteBtn.css('display', 'none');
-}); //historyBtn_click_event
-
-deleteBtn.mouseover(function () {
-  deleteBtn.css('color', '#191919');
-}); //historyBtn_click_event
-
-deleteBtn.mouseout(function () {
-  deleteBtn.css('color', '#ccc');
-}); //historyBtn_click_event
-
-deleteBtn.click(function () {
-  historyList.css('display', 'none');
-}); //historyBtn_click_event
-
-deleteAll.click(function () {
-  historyList.css('display', 'none');
-}); //historyBtn_click_event

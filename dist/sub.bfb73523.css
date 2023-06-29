@@ -18,16 +18,15 @@ html {
   width: 100%;
   height: 100vh;
   background-color: #f8f8f8;
-  overflow-x: hidden;
 }
-body::-webkit-scrollbar,
-html::-webkit-scrollbar {
+body ::-webkit-scrollbar,
+html ::-webkit-scrollbar {
   width: 10px;
-  height: auto;
+  height: 0px;
   background-color: #eee;
 }
-body::-webkit-scrollbar-thumb,
-html::-webkit-scrollbar-thumb {
+body ::-webkit-scrollbar-thumb,
+html ::-webkit-scrollbar-thumb {
   width: 10px;
   background-color: #FD8234;
 }
@@ -158,13 +157,13 @@ html::-webkit-scrollbar-thumb {
   width: 1220px;
   margin: 0 auto 5px;
 }
-.main .array .buttonContainer {
+.main .array .btnContainer {
   padding: 10px;
   display: flex;
   justify-content: flex-end;
   align-items: baseline;
 }
-.main .array .buttonContainer button {
+.main .array .btnContainer button {
   width: 78px;
   padding: 5px 10px;
   margin: 5px 5px 10px;
@@ -173,6 +172,9 @@ html::-webkit-scrollbar-thumb {
   background-color: #f8f8f8;
   border-radius: 10px 10px 0 0;
   cursor: pointer;
+}
+.main .array .btnContainer button.on {
+  color: #FD8234;
 }
 .main .product {
   width: 1220px;
@@ -183,42 +185,86 @@ html::-webkit-scrollbar-thumb {
   width: 1220px;
   display: flex;
   flex-wrap: wrap;
+  /* .productLi {
+    position: relative;
+    width: 278px;
+    height: 278px;
+    margin: 0 auto 100px; */
 }
-.main .product .product_list li {
+.main .product .product_list .productDiv {
+  position: relative;
   width: 278px;
   height: 278px;
   margin: 0 auto 100px;
 }
-.main .product .product_list li:hover {
+.main .product .product_list .productDiv:hover {
   transition: all 0.3s ease;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
-.main .product .product_list li:hover .product_txt {
+.main .product .product_list .productDiv:hover .product_txt {
   background-color: #efefef;
   transition: all 0.3s ease;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
-.main .product .product_list li .product_img a {
+.main .product .product_list .productDiv .bestTag {
+  width: 60px;
+  height: 25px;
+  background-color: #FD8234;
+  color: #EFE8DA;
+  text-align: center;
+  line-height: 26px;
+  font-size: 12px;
+  font-weight: 500;
+  position: absolute;
+  top: 0x;
+  left: 0;
+  z-index: 9999999;
+  display: none;
+}
+.main .product .product_list .productDiv .bestTag:hover {
+  transition: all 0.3s ease;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.main .product .product_list .productDiv .newTag {
+  width: 60px;
+  height: 25px;
+  background-color: #EFE8DA;
+  color: #252117;
+  text-align: center;
+  line-height: 26px;
+  font-size: 12px;
+  font-weight: 600;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999999;
+  display: none;
+}
+.main .product .product_list .productDiv .newTag:hover {
+  transition: all 0.3s ease;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.main .product .product_list .productDiv .product_img a {
   display: block;
   width: 278px;
   height: 278px;
   overflow: hidden;
   cursor: pointer;
 }
-.main .product .product_list li .product_img a img {
+.main .product .product_list .productDiv .product_img a img {
   width: 100%;
   height: 100%;
 }
-.main .product .product_list li .product_img a img:hover {
+.main .product .product_list .productDiv .product_img a img:hover {
   transform: scale(1.04);
   transition: all 0.8s ease;
 }
-.main .product .product_list li .product_txt {
+.main .product .product_list .productDiv .product_txt {
   width: 278px;
   height: 60px;
   background-color: rgba(255, 255, 255, 0.7254901961);
 }
-.main .product .product_list li .product_txt p {
+.main .product .product_list .productDiv .product_txt p {
   font-size: 11px;
   padding: 10px 15px 0;
   box-sizing: border-box;
@@ -226,10 +272,10 @@ html::-webkit-scrollbar-thumb {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.main .product .product_list li .product_txt span {
+.main .product .product_list .productDiv .product_txt span {
   font-size: 12px;
   font-weight: bold;
-  padding: 3px 15px;
+  padding: 3px 0 3px 15px;
   box-sizing: border-box;
 }
 .main .paging {
@@ -244,17 +290,17 @@ html::-webkit-scrollbar-thumb {
 .main .paging i {
   cursor: pointer;
 }
-.main .paging .pages {
+.main .paging .numBtnWrapper {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-.main .paging .pages span {
+.main .paging .numBtnWrapper span {
   text-align: center;
   margin: 0 15px;
   cursor: pointer;
 }
-.main .paging .pages .active {
+.main .paging .numBtnWrapper .selected {
   line-height: 29px;
   margin: 0 auto;
   width: 30px;
@@ -305,13 +351,15 @@ html::-webkit-scrollbar-thumb {
 /* ----------------------- shopping_history ----------------------- */
 .history .history_popup {
   position: fixed;
-  right: -480px;
+  right: 0;
   bottom: 0;
   width: 480px;
   height: 100vh;
   background-color: #fff;
   transition: all 0.4s ease;
   z-index: 9999999999 !important;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  display: none;
 }
 .history .history_popup h4 {
   padding: 50px 30px 40px;

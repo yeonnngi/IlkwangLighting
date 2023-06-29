@@ -17,15 +17,14 @@ html {
   width: 100%;
   height: 100vh;
   background-color: #f8f8f8;
-  overflow-x: hidden;
 
-  &::-webkit-scrollbar {
+  ::-webkit-scrollbar {
     width: 10px;
-    height: auto;
+    height: 0px;
     background-color: #eee;
   }
 
-  &::-webkit-scrollbar-thumb {
+  ::-webkit-scrollbar-thumb {
     width: 10px;
     background-color: #FD8234;
   }
@@ -184,7 +183,7 @@ $color : #FD8234;
     width: 1220px;
     margin: 0 auto 5px;
 
-    .buttonContainer {
+    .btnContainer {
       padding: 10px;
       display: flex;
       justify-content: flex-end;
@@ -199,6 +198,10 @@ $color : #FD8234;
         background-color: #f8f8f8;
         border-radius: 10px 10px 0 0;
         cursor: pointer;
+
+        &.on {
+          color: $color;
+        }
       }
     }
   }
@@ -213,64 +216,114 @@ $color : #FD8234;
       display: flex;
       flex-wrap: wrap;
 
-      li {
+      /* .productLi {
+        position: relative;
         width: 278px;
         height: 278px;
-        margin: 0 auto 100px;
+        margin: 0 auto 100px; */
 
-        &:hover {
-          transition: all 0.3s ease;
-          box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-        }
+        .productDiv {
+          position: relative;
+          width: 278px;
+          height: 278px;
+          margin: 0 auto 100px;
 
-        &:hover .product_txt {
-          background-color: #efefef;
-          transition: all 0.3s ease;
-          box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-        }
+          &:hover {
+            transition: all 0.3s ease;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+          }
 
-        .product_img {
+          &:hover .product_txt {
+            background-color: #efefef;
+            transition: all 0.3s ease;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+          }
 
-          a {
-            display: block;
-            width: 278px;
-            height: 278px;
-            overflow: hidden;
-            cursor: pointer;
+          .bestTag {
+            width: 60px;
+            height: 25px;
+            background-color: $color;
+            color: #EFE8DA;
+            text-align: center;
+            line-height: 26px;
+            font-size: 12px;
+            font-weight: 500;
+            position: absolute;
+            top: 0x;
+            left: 0;
+            z-index: 9999999;
+            display: none;
 
-            img {
-              width: 100%;
-              height: 100%;
+            &:hover {
+              transition: all 0.3s ease;
+              box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            }
+          }
 
-              &:hover {
-                transform: scale(1.04);
-                transition: all 0.8s ease;
+          .newTag {
+            width: 60px;
+            height: 25px;
+            background-color: #EFE8DA;
+            color: #252117;
+            text-align: center;
+            line-height: 26px;
+            font-size: 12px;
+            font-weight: 600;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 9999999;
+            display: none;
+
+            &:hover {
+              transition: all 0.3s ease;
+              box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            }
+          }
+
+          .product_img {
+
+            a {
+              display: block;
+              width: 278px;
+              height: 278px;
+              overflow: hidden;
+              cursor: pointer;
+
+              img {
+                width: 100%;
+                height: 100%;
+
+                &:hover {
+                  transform: scale(1.04);
+                  transition: all 0.8s ease;
+                }
               }
             }
           }
-        }
 
-        .product_txt {
-          width: 278px;
-          height: 60px;
-          background-color: #ffffffb9;
+          .product_txt {
+            width: 278px;
+            height: 60px;
+            background-color: #ffffffb9;
 
-          p {
-            font-size: 11px;
-            padding: 10px 15px 0;
-            box-sizing: border-box;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            p {
+              font-size: 11px;
+              padding: 10px 15px 0;
+              box-sizing: border-box;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+
+            span {
+              font-size: 12px;
+              font-weight: bold;
+              padding: 3px 0 3px 15px;
+              box-sizing: border-box;
+            }
           }
-
-          span {
-            font-size: 12px;
-            font-weight: bold;
-            padding: 3px 15px;
-            box-sizing: border-box;
-          }
-        }
+        //}
       }
     }
   }
@@ -288,7 +341,7 @@ $color : #FD8234;
       cursor: pointer;
     }
 
-    .pages {
+    .numBtnWrapper {
       display: flex;
       justify-content: space-around;
       align-items: center;
@@ -299,7 +352,7 @@ $color : #FD8234;
         cursor: pointer;
       }
 
-      .active {
+      .selected {
         line-height: 29px;
         margin: 0 auto;
         width: 30px;
@@ -359,13 +412,15 @@ $color : #FD8234;
 
   .history_popup {
     position: fixed;
-    right: -480px;
+    right: 0;
     bottom: 0;
     width: 480px;
     height: 100vh;
     background-color: #fff;
     transition: all 0.4s ease;
     z-index: 9999999999 !important;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: none;
 
     h4 {
       padding: 50px 30px 40px;

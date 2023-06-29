@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
 
   <!-- //jQuery -->
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="./js/jquery-3.7.0.min.js"></script>
 
   <!-- gsap -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
@@ -93,8 +93,10 @@
     </div>
 
     <div class="array">
-      <div class="buttonContainer kor">
-        <button class="basicBtn">신상품</button>
+      <div class="btnContainer kor">
+        <button class="basicBtn on">기본 정렬</button>
+        <div>|</div>
+        <button class="newBtn">신상품</button>
         <div>|</div>
         <button class="bestBtn">BEST</button>
         <div>|</div>
@@ -109,19 +111,15 @@
 
     <section class="product">
       <ul class="product_list">
-       </ul><!-- //product_list -->
+      </ul><!-- //product_list -->
 
       <div id="paging" class="paging kor">
-        <i class="fas fa-angle-double-left" id="first_page"></i>
-        <i class="fas fa-angle-left" id="prev_page"></i>
-        <div id="pages" class="pages">
-          <span class="active">1</span>
-          <span>2</span>
-          <span>3</span>
-        </div><!-- //pages -->
-        <i class="fas fa-angle-right" id="next_page"></i>
-        <i class="fas fa-angle-double-right" id="last_page"></i>
-      </div><!-- //pagination -->
+        <i class="fas fa-angle-left" id="prevBtn" class="prevBtn"></i>
+        <div id="numBtnWrapper" class="numBtnWrapper">
+          <span class="num_button">1</span>
+        </div><!-- //btnWrapper -->
+        <i class="fas fa-angle-right" id="nextBtn" class="nextBtn"></i>
+      </div><!-- //paging -->
     </section><!-- //product -->
   </main><!-- //main -->
 

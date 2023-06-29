@@ -17,11 +17,10 @@ html {
   width: 100%;
   height: 100vh;
   background-color: #f8f8f8;
-  overflow-x: hidden;
 
   &::-webkit-scrollbar {
     width: 10px;
-    height: auto;
+    height: 0px;
     background-color: #eee;
   }
 
@@ -351,7 +350,7 @@ $color : #FD8234;
     width: 100vw;
     height: 200px;
     background-color: #ffca8c;
-    margin: 60px 0 110px;
+    margin: 90px 0 125px;
 
 
     .banner_img {
@@ -708,13 +707,15 @@ $color : #FD8234;
 
   .history_popup {
     position: fixed;
-    right: -480px;
+    right: 0;
     bottom: 0;
     width: 480px;
     height: 100vh;
     background-color: #fff;
     transition: all 0.4s ease;
     z-index: 9999999999 !important;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: none;
 
     h4 {
       padding: 50px 30px 40px;

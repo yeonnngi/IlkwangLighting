@@ -41,7 +41,7 @@ $(function () {
 
   function left() {
     stop()
-    direction = 'left' 
+    direction = 'left'
     $('.insta_box .frame').animate({
       left: eleWidth * -1
     }, 500, function () {
@@ -55,7 +55,7 @@ $(function () {
   function right() {
     stop()
     direction = 'right'
-    $('.insta_box .frame li:last').insertBefore($('.frame ul li:first'))
+    $('.insta_box .frame li:last').insertBefore($('.frame li:first'))
     $('.insta_box .frame').css('left', eleWidth * -1)
     $('.insta_box .frame').animate({
       left: 0
@@ -89,4 +89,4 @@ $(function () {
 
   $('.play').click() //초기 강제 자동실행
 
-}) //jquery_function
+});

@@ -119,126 +119,142 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"js/main.js":[function(require,module,exports) {
 /* -------------- issue_contents -------------- */
-/* 
-const interior = document.querySelector('.space_box .img_left .interior')
-const interiorLi = document.querySelector('.space_box .img_left .interior li')
-const product = document.querySelector('.space_box .img_right .product')
-const beddingLi = document.querySelector('.space_box .img_left .bedding li')
-const beddingRi = document.querySelector('.space_box .img_right .bedding li')
-const livingLi = document.querySelector('.space_box .img_left .living li')
-const livingRi = document.querySelector('.space_box .img_right .living li')
-const diningLi = document.querySelector('.space_box .img_left .dining li')
-const diningRi = document.querySelector('.space_box .img_right .dining li')
-const kitchenLi = document.querySelector('.space_box .img_left .kitchen li')
-const kitchenRi = document.querySelector('.space_box .img_right .kitchen li')
-const deskLi = document.querySelector('.space_box .img_left .desk li')
-const deskRi = document.querySelector('.space_box .img_right .desk li')
- */
+document.addEventListener('DOMContentLoaded', function () {
+  var tabLi = document.querySelectorAll('.space_wrap .space_label li');
+  var product = document.querySelectorAll('.space_box .img_right .product');
+  var pBeddingLi = document.querySelectorAll('.space_box .img_right .bedding li');
+  var pLivingLi = document.querySelectorAll('.space_box .img_right .living li');
+  var pDiningLi = document.querySelectorAll('.space_box .img_right .dining li');
+  var pKitchenLi = document.querySelectorAll('.space_box .img_right .kitchen li');
+  var pDeskLi = document.querySelectorAll('.space_box .img_right .desk li');
+  var interior = document.querySelectorAll('.space_box .img_left .interior');
+  var interiorLi = document.querySelectorAll('.space_box .img_left .interior li');
+  var iBeddingLi = document.querySelectorAll('.space_box .img_left .bedding li');
+  var iLivingLi = document.querySelectorAll('.space_box .img_left .living li');
+  var iDiningLi = document.querySelectorAll('.space_box .img_left .dining li');
+  var iKitchenLi = document.querySelectorAll('.space_box .img_left .kitchen li');
+  var iDeskLi = document.querySelectorAll('.space_box .img_left .desk li');
+  tabLi.forEach(function (tab, i) {
+    tab.addEventListener('click', function () {
+      product.forEach(function (item) {
+        item.classList.remove('right_on');
+        product[i].classList.add('right_on');
+      });
+      interior.forEach(function (item) {
+        item.classList.remove('ul_on');
+        interior[i].classList.add('ul_on');
+      });
+      tabLi.forEach(function (item) {
+        item.classList.remove('on');
+        tabLi[i].classList.add('on');
+      });
+    });
+  });
+  pBeddingLi.forEach(function (item, i) {
+    item.addEventListener('mouseover', function () {
+      iBeddingLi.forEach(function (item) {
+        item.classList.remove('li_on');
+        iBeddingLi[i].classList.add('li_on');
+      });
+    });
+  });
+  pLivingLi.forEach(function (item, i) {
+    item.addEventListener('mouseover', function () {
+      iLivingLi.forEach(function (item) {
+        item.classList.remove('li_on');
+        iLivingLi[i].classList.add('li_on');
+      });
+    });
+  });
+  pDiningLi.forEach(function (item, i) {
+    item.addEventListener('mouseover', function () {
+      iDiningLi.forEach(function (item) {
+        item.classList.remove('li_on');
+        iDiningLi[i].classList.add('li_on');
+      });
+    });
+  });
+  pKitchenLi.forEach(function (item, i) {
+    item.addEventListener('mouseover', function () {
+      iKitchenLi.forEach(function (item) {
+        item.classList.remove('li_on');
+        iKitchenLi[i].classList.add('li_on');
+      });
+    });
+  });
+  pDeskLi.forEach(function (item, i) {
+    item.addEventListener('mouseover', function () {
+      iDeskLi.forEach(function (item) {
+        item.classList.remove('li_on');
+        iDeskLi[i].classList.add('li_on');
+      });
+    });
+  });
 
-var interior = $('.space_box .img_left .interior');
-var interiorLi = $('.space_box .img_left .interior li');
-var product = $('.space_box .img_right .product');
-var beddingLi = $('.space_box .img_left .bedding li');
-var beddingRi = $('.space_box .img_right .bedding li');
-var livingLi = $('.space_box .img_left .living li');
-var livingRi = $('.space_box .img_right .living li');
-var diningLi = $('.space_box .img_left .dining li');
-var diningRi = $('.space_box .img_right .dining li');
-var kitchenLi = $('.space_box .img_left .kitchen li');
-var kitchenRi = $('.space_box .img_right .kitchen li');
-var deskLi = $('.space_box .img_left .desk li');
-var deskRi = $('.space_box .img_right .desk li');
-beddingRi.mouseover(function () {
-  index = $(this).index();
-  beddingLi.removeClass('li_on');
-  beddingLi.eq(index).addClass('li_on');
+  /* -------------- top_btn -------------- */
+  var topBtn = document.querySelector('.top_btn');
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 300) {
+      gsap.to(topBtn, 0.3, {
+        opacity: 1
+      });
+    } else {
+      gsap.to(topBtn, 0.3, {
+        opacity: 0
+      });
+    }
+  }); //topBtn_event
+
+  topBtn.addEventListener('click', function () {
+    gsap.to(window, 0.5, {
+      scrollTo: 0
+    });
+  });
+
+  /* -------------- shopping_history -------------- */
+  var historyBtn = document.querySelector('.history_btn');
+  var historyPopup = document.querySelector('.history_popup');
+  var hideBtn = document.querySelector('.history_hide');
+  var historyList = document.querySelector('.shopping_history .history_list');
+  var deleteBtn = document.querySelector('.list_delete');
+  var deleteAll = document.querySelector('.deleteAll');
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 300) {
+      gsap.to(historyBtn, 0.3, {
+        opacity: 1
+      });
+    } else {
+      gsap.to(historyBtn, 0.3, {
+        opacity: 0
+      });
+    }
+  }); //historyBtn_event
+
+  historyBtn.addEventListener('click', function () {
+    historyPopup.style.display = 'block';
+  });
+  hideBtn.addEventListener('click', function () {
+    historyPopup.style.display = 'none';
+  });
+  historyList.addEventListener('mouseover', function () {
+    deleteBtn.style.display = 'block';
+  });
+  historyList.addEventListener('mouseout', function () {
+    deleteBtn.style.display = 'none';
+  });
+  deleteBtn.addEventListener('mouseover', function () {
+    deleteBtn.style.color = '#191919';
+  });
+  deleteBtn.addEventListener('mouseout', function () {
+    deleteBtn.style.color = '#ccc';
+  });
+  deleteBtn.addEventListener('click', function () {
+    historyList.style.display = 'none';
+  });
+  deleteAll.addEventListener('click', function () {
+    historyList.style.display = 'none';
+  });
 });
-livingRi.mouseover(function () {
-  index = $(this).index();
-  livingLi.removeClass('li_on');
-  livingLi.eq(index).addClass('li_on');
-});
-diningRi.mouseover(function () {
-  index = $(this).index();
-  diningLi.removeClass('li_on');
-  diningLi.eq(index).addClass('li_on');
-});
-kitchenRi.mouseover(function () {
-  index = $(this).index();
-  kitchenLi.removeClass('li_on');
-  kitchenLi.eq(index).addClass('li_on');
-});
-deskRi.mouseover(function () {
-  index = $(this).index();
-  deskLi.removeClass('li_on');
-  deskLi.eq(index).addClass('li_on');
-});
-//issue_contents
-
-var tabLi = $('.space_wrap .space_label li');
-var index = 0;
-tabLi.click(function () {
-  tabLi.removeClass('on');
-  $(this).addClass('on');
-  index = $(this).index();
-  interior.removeClass('ul_on');
-  interior.eq(index).addClass('ul_on');
-  product.removeClass('right_on');
-  product.eq(index).addClass('right_on');
-});
-
-/* -------------- top_btn -------------- */
-
-$('.top_btn').click(function (e) {
-  e.preventDefault();
-  $('html, body').stop().animate({
-    scrollTop: 0
-  }, 500);
-}); //btn_top_click_event
-
-/* -------------- shopping_history -------------- */
-var historyPopup = $('.history_popup');
-var historyBtn = $('.history_btn');
-var hideBtn = $('.history_hide');
-var shoppingHistory = $('.shopping_history');
-var historyList = $('.shopping_history .history_list');
-var deleteBtn = $('.list_delete');
-var deleteAll = $('.deleteAll');
-historyBtn.click(function () {
-  historyPopup.stop().animate({
-    right: 0
-  }, 100);
-}); //historyBtn_click_event
-
-hideBtn.click(function () {
-  historyPopup.stop().animate({
-    right: -480
-  }, 100);
-}); //historyBtn_click_event
-
-historyList.mouseover(function () {
-  deleteBtn.css('display', 'block');
-}); //historyBtn_click_event
-
-historyList.mouseout(function () {
-  deleteBtn.css('display', 'none');
-}); //historyBtn_click_event
-
-deleteBtn.mouseover(function () {
-  deleteBtn.css('color', '#191919');
-}); //historyBtn_click_event
-
-deleteBtn.mouseout(function () {
-  deleteBtn.css('color', '#ccc');
-}); //historyBtn_click_event
-
-deleteBtn.click(function () {
-  historyList.css('display', 'none');
-}); //historyBtn_click_event
-
-deleteAll.click(function () {
-  historyList.css('display', 'none');
-}); //historyBtn_click_event
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -264,7 +280,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58769" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58798" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
