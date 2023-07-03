@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.5, minimum-scale=1.0, user-scalable=no">
+  <link rel=" stylesheet" href="/join.80ca95d1.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+  <title>login_join</title>
+<script src="/join.80ca95d1.js"></script><script src="/header.2256be32.js"></script></head>
+
+<script>document.addEventListener('DOMContentLoaded', function () {
+  var body = document.querySelector('body');
+  var userId = document.getElementById('user_id');
+  var userPw1 = document.getElementById('user_pw1');
+  var userPw2 = document.getElementById('user_pw2');
+  var userName = document.getElementById('user_name');
+  var birthYear = document.getElementById('year');
+  var birthMonth = document.getElementById('month');
+  var birthDate = document.getElementById('day');
+  var telSecond = document.getElementById('tel_second');
+  var telThird = document.getElementById('tel_third');
+  var emailId = document.getElementById('emailId');
+  var textEmail = document.getElementById('textEmail');
+  var emailSel = document.getElementById('emailSel');
+  var friendsCode = document.getElementById('friendsCode');
+  var codeBtn = document.getElementById('codeBtn');
+  var joinBtn = document.getElementById('joinBtn');
+  userId.addEventListener('change', checkId);
+  userPw1.addEventListener('change', checkPw);
+  userPw2.addEventListener('change', comparePw);
+  telSecond.addEventListener('keyup', moveTel);
+  emailSel.addEventListener('change', changeEmail);
+  codeBtn.addEventListener('click', checkCode);
+  joinBtn.addEventListener('click', submit);
+  function checkId() {
+    var idChkBg = document.getElementById('id_bg');
+    var idChk = document.getElementById('id_box');
+    var idChkBtn = document.getElementById('idChkBtn');
+    var regId = /^[a-zA-Z0-9]{5,16}$/;
+    idChkBtn.addEventListener('click', hide);
+    if (!regId.test(userId.value)) {
+      window.scrollTo(0, 0);
+      body.style.overflow = 'hidden';
+      idChkBg.style.display = 'block';
+      idChk.style.display = 'block';
+    }
+    function hide() {
+      idChkBg.style.display = 'none';
+      idChk.style.display = 'none';
+      body.style.overflow = 'visible';
+      userId.value = "";
+      userId.focus();
+      return true;
+    }
+  } //checkId();
+
+  function checkPw() {
+    var pwChkBg = document.getElementById('pw_bg');
+    var pwChk = document.getElementById('pw_box');
+    var pwChkBtn = document.getElementById('pwChkBtn');
+    var regPw = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[~!@#$%^&*()+|=])[A-Za-z\d~!@#$%^&*()+|=]{8,16}$/;
+    pwChkBtn.addEventListener('click', hide);
+    if (!regPw.test(userPw1.value)) {
+      window.scrollTo(0, 0);
+      body.style.overflow = 'hidden';
+      pwChkBg.style.display = 'block';
+      pwChk.style.display = 'block';
+    }
+    function hide() {
+      pwChkBg.style.display = 'none';
+      pwChk.style.display = 'none';
+      body.style.overflow = 'visible';
+      userPw1.select();
+      return true;
+    }
+  } //checkPw()
+
+  function comparePw() {
+    var comparePwBg = document.getElementById('comparePw_bg');
+    var comparePw = document.getElementById('comparePw_box');
+    var comparePwBtn = document.getElementById('comparePwBtn');
+    comparePwBtn.addEventListener('click', hide);
+    if (userPw1.value !== userPw2.value) {
+      window.scrollTo(0, 0);
+      body.style.overflow = 'hidden';
+      comparePwBg.style.display = 'block';
+      comparePw.style.display = 'block';
+    }
+    function hide() {
+      comparePwBg.style.display = 'none';
+      comparePw.style.display = 'none';
+      body.style.overflow = 'visible';
+      userPw2.select();
+      return true;
+    }
+  } //comparePw()
+
+  function moveTel() {
+    if (telSecond.value.length >= 4) {
+      telThird.focus();
+    }
+  } //moveTel()
+
+  function changeEmail() {
+    i = emailSel.selectedIndex;
+    var select = emailSel.options[i].value;
+    textEmail.value = select;
+    if (emailSel.value == 'directly') {
+      textEmail.value = '';
+      textEmail.focus();
+      textEmail.disabled = false;
+    }
+  } //changeEmail
+
+  function checkCode() {
+    var codeChkBg = document.getElementById('codeChk_bg');
+    var codeChkBox = document.getElementById('codeChk_box');
+    var codeChkBtn = document.getElementById('codeChkBtn');
+    var codePassBg = document.getElementById('codePass_bg');
+    var codePassBox = document.getElementById('codePass_box');
+    var codePassBtn = document.getElementById('codePassBtn');
+    if (friendsCode.value.length < 7 || userId.value.length > 7) {
+      window.scrollTo(0, 0);
+      body.style.overflow = 'hidden';
+      codeChkBg.style.display = 'block';
+      codeChkBox.style.display = 'block';
+      codeChkBtn.addEventListener('click', function () {
+        codeChkBg.style.display = 'none';
+        codeChkBox.style.display = 'none';
+        body.style.overflow = 'visible';
+        friendsCode.select();
+        return true;
+      });
+    } else {
+      window.scrollTo(0, 0);
+      body.style.overflow = 'hidden';
+      codePassBg.style.display = 'block';
+      codePassBox.style.display = 'block';
+      codePassBtn.addEventListener('click', function () {
+        codePassBg.style.display = 'none';
+        codePassBox.style.display = 'none';
+        body.style.overflow = 'visible';
+      });
+    }
+  }
+  function submit() {
+    var joinBg = document.getElementById('join_bg');
+    var joinBox = document.getElementById('join_box');
+    var joinChkBtn = document.getElementById('joinChkBtn');
+    if (userId.value == '' || userPw1.value == '' || userPw2.value == '' || userName.value == '' || telSecond.value == '' || telThird.value == '' || emailId.value == '' || textEmail.value == '') {
+      window.scrollTo(0, 0);
+      body.style.overflow = 'hidden';
+      joinBg.style.display = 'block';
+      joinBox.style.display = 'block';
+      joinChkBtn.addEventListener('click', function () {
+        joinBg.style.display = 'none';
+        joinBox.style.display = 'none';
+        body.style.overflow = 'visible';
+        return true;
+      });
+    } else {
+      location.href = './success.html';
+    }
+  }
+});</script>
+
+<!-- ------------------ popup ------------------ -->
+<body>
+  <section class="popUp_id kor">
+    <div id="id_bg" class="popUp_bg long_bg"></div>
+    <div id="id_box" class="popUp_box long_box">
+      <i class="fas fa-exclamation-circle"></i>
+      <p>아이디는 하나 이상의 영문 소문자, 숫자,<br>특수문자를 포함한 5~12자로 설정해주세요.</p>
+      <button id="idChkBtn"><span>확인</span></button>
+    </div><!-- //popUp_id -->
+  </section>
+
+  <section class="popUp_pw">
+    <div id="pw_bg" class="popUp_bg long_bg"></div>
+    <div id="pw_box" class="popUp_box long_box">
+      <i class="fas fa-exclamation-circle"></i>
+      <p>비밀번호는 하나 이상의 영문 대/소문자,<br>숫자, 특수문자를 포함한 5~16자로 설정해주세요.</p>
+      <button id="pwChkBtn"><span>확인</span></button>
+    </div><!-- //popUp_pw -->
+  </section>
+
+  <section class="popUp_comparePw">
+    <div id="comparePw_bg" class="popUp_bg"></div>
+    <div id="comparePw_box" class="popUp_box">
+      <i class="fas fa-exclamation-circle"></i>
+      <p>비밀번호가 일치하지 않습니다.<br></p>
+      <button id="comparePwBtn"><span>확인</span></button>
+    </div><!-- //popUpPwChk_pwChk -->
+  </section>
+
+  <section class="popUp_codeChk">
+    <div id="codeChk_bg" class=" popUp_bg"></div>
+    <div id="codeChk_box" class="popUp_box">
+      <i class="fas fa-exclamation-circle"></i>
+      <p>코드를 확인해주세요.</p>
+      <button id="codeChkBtn"><span>확인</span></button>
+    </div><!-- //popUp_codeChk -->
+  </section>
+
+  <section class="popUp_codePass">
+    <div id="codePass_bg" class="popUp_bg "></div>
+    <div id="codePass_box" class="popUp_box">
+      <i class="fas fa-check-circle"></i>
+      <p>코드가 확인되었습니다.</p>
+      <button id="codePassBtn"><span>확인</span></button>
+    </div><!-- //popUp_codePass -->
+  </section>
+
+  <section class="popUp_join">
+    <div id="join_bg" class="popUp_bg "></div>
+    <div id="join_box" class="popUp_box">
+      <i class="fas fa-exclamation-circle"></i>
+      <p>필수 항목을 모두 입력해주세요.</p>
+      <button id="joinChkBtn"><span>확인</span></button>
+    </div><!-- //popUp_codePass -->
+  </section>
+  <!-- ------------------ //popup ------------------ -->
+
+  <link rel="stylesheet" href="/header.2256be32.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<!-- user main js  -->
+<script src="/header.4485232e.js" defer=""></script>
+
+
+<body>
+  <!-- body만 두고 나머지 링크 연결은 index.html로 해주기 -->
+  <header class="header">
+    <div class="logo">
+      <a href="/index.html"><img src="/1962_logo_soft.fa84afa8.png" alt="1962_logo"></a>
+    </div>
+
+    <nav class="nav">
+      <div class="lnb eng">
+        <ul class="lnb_main">
+          <li class="shop"><a href="/sub.html">shop</a></li>
+          <li class="our_story"><a href="/sub.html">our story</a></li>
+          <li><a href="/sub.html">special project</a></li>
+          <li class="support"><a href="/sub.html">support</a></li>
+          <li><a href="/sub.html">contact</a></li>
+        </ul><!-- //lnb_main -->
+
+        <ul class="lnb_detail">
+          <li class="shop_detail_bg">
+            <ul class="shop_detail kor">
+              <li><a href="/sub.html">
+                  <p>NEW</p>
+                </a></li>
+              <li><a href="/sub.html">
+                  <p>ALL</p>
+                </a></li>
+              <li><a href="/sub.html">IK 테이블 스탠드</a></li>
+              <li><a href="/sub.html">IK 플로어 스탠드</a></li>
+              <li><a href="/sub.html">IK 팬던트</a></li>
+              <li><a href="/sub.html">클래식전구</a></li>
+              <li><a href="/sub.html">장식용전구</a></li>
+              <li><a href="/sub.html">삼파장전구</a></li>
+              <li><a href="/sub.html">가드닝전구</a></li>
+              <li><a href="/sub.html">할로겐전구</a></li>
+              <li><a href="/sub.html">산업용전구</a></li>
+              <li><a href="/sub.html">크립톤전구</a></li>
+              <li><a href="/sub.html">LED전구</a></li>
+            </ul>
+          </li><!-- //shop_detail -->
+
+          <li class="story_detail_bg">
+            <ul class="story_detail eng">
+              <li><a href="/sub.html">brand story</a></li>
+              <li><a href="/sub.html">history</a></li>
+            </ul>
+          </li><!-- //story_detail -->
+
+          <li class="support_detail_bg">
+            <ul class="support_detail eng">
+              <li><a href="/sub.html">guide</a></li>
+              <li><a href="/sub.html">news</a></li>
+              <li><a href="/sub.html">q & a</a></li>
+              <li><a href="/sub.html">download</a></li>
+            </ul>
+          </li><!-- //support_detail -->
+        </ul><!-- //lnb_detail -->
+      </div><!-- //lnb -->
+
+      <div class="gnb eng">
+        <ul>
+          <li class="search">
+            <input type="text"><i class="fas fa-search"></i></li>
+          <li class="login btn"><a href="/login.html" target="_blank">login</a></li>
+          <li class="join btn"><a href="/join_terms.html" target="_blank">join</a></li>
+          <li class="cart btn"><a href="#!">cart</a></li>
+        </ul>
+      </div><!-- //gnb -->
+    </nav> <!-- //nav -->
+  </header>
+</body>
+
+  <!-- ------------------ join ------------------ -->
+  <section class="main kor">
+    <div class="wrap kor">
+      <div class="join_title kor">
+        <h2>회원가입</h2>
+        <div class="path">
+          <p>이용약관 <i class="fas fa-chevron-right"></i> <span>기본 정보 입력 및 설정</span> <i class="fas fa-chevron-right"></i>
+            가입 완료</p>
+        </div>
+      </div><!-- //join_title -->
+
+
+      <div name="join_form">
+        <ul class="join_list kor">
+          <li class="id">
+            <p class="essential">* 항목은 필수 입력사항입니다.</p>
+            <label for="user_id">아이디<span> *</span></label>
+            <input type="text" id="user_id" class="join_box" placeholder="영문 소문자, 숫자를 포함한 5~12자" onfocus="this.placeholder=''" onblur="this.placeholder='영문 소문자, 숫자를 포함한 5~12자'" size="12" required="">
+          </li><!-- //id -->
+
+          <li class="pw">
+            <label for="user_pw1">비밀번호<span> *</span></label>
+            <input type="password" id="user_pw1" class="join_box" placeholder="영문 대/소문자, 숫자, 특수문자를 포함한 5~16자" onfocus="this.placeholder=''" onblur="this.placeholder='영문 대/소문자, 숫자, 특수문자를 포함한 5~16자'" size="16" required="">
+          </li><!-- //pw -->
+
+          <li class="pw_chk">
+            <label for="user_pw2">비밀번호 확인<span> *</span></label>
+            <input type="password" id="user_pw2" class="join_box" placeholder="비밀번호를 한 번 더 입력해 주세요." onfocus="this.placeholder=''" onblur="this.placeholder='비밀번호를 한 번 더 입력해 주세요.'" size="16" required="">
+          </li><!-- //pw_chk -->
+
+          <li class="name">
+            <label for="user_name">이름<span> *</span></label>
+            <input type="text" id="user_name" class="join_box" placeholder="이름을 입력해 주세요." onfocus="this.placeholder=''" onblur="this.placeholder='이름을 입력해 주세요.'" required="">
+          </li><!-- //name -->
+
+          <li class="birthday">
+            <label for="birthday">생년월일<br>
+              <input type="text" id="year" class="birth_box" placeholder="년도(4자)" onfocus="this.placeholder=''" onblur="this.placeholder='년도(4자)'" maxlength="4">
+              <select name="mm" id="month" class="birth_box">
+                <option value="">월</option>
+                <option value="">---------------------</option>
+                <option value="01">1월</option>
+                <option value="02">2월</option>
+                <option value="03">3월</option>
+                <option value="04">4월</option>
+                <option value="05">5월</option>
+                <option value="06">6월</option>
+                <option value="07">7월</option>
+                <option value="08">8월</option>
+                <option value="09">9월</option>
+                <option value="10">10월</option>
+                <option value="11">11월</option>
+                <option value="12">12월</option>
+              </select>
+              <select name="dd" id="day" class="birth_box">
+                <option value="">일</option>
+                <option value="">---------------------</option>
+                <option value="01일">1일</option>
+                <option value="02일">2일</option>
+                <option value="03일">3일</option>
+                <option value="04일">4일</option>
+                <option value="05일">5일</option>
+                <option value="06일">6일</option>
+                <option value="07일">7일</option>
+                <option value="08일">8일</option>
+                <option value="09일">9일</option>
+                <option value="10일">10일</option>
+                <option value="11일">11일</option>
+                <option value="12일">12일</option>
+                <option value="13일">13일</option>
+                <option value="14일">14일</option>
+                <option value="15일">15일</option>
+                <option value="16일">16일</option>
+                <option value="17일">17일</option>
+                <option value="18일">18일</option>
+                <option value="19일">19일</option>
+                <option value="20일">20일</option>
+                <option value="21일">21일</option>
+                <option value="22일">22일</option>
+                <option value="23일">23일</option>
+                <option value="24일">24일</option>
+                <option value="25일">25일</option>
+                <option value="26일">26일</option>
+                <option value="27일">27일</option>
+                <option value="28일">28일</option>
+                <option value="29일">29일</option>
+                <option value="30일">30일</option>
+                <option value="31일">31일</option>
+              </select>
+            </label>
+          </li><!-- //birthday -->
+
+          <li class="gender">
+            <label for="gender">성별</label>
+            <br>
+            <input type="radio" id="male" name="gender"><label for="male">남자</label>
+            <input type="radio" id="female" name="gender"><label for="female">여자</label>
+          </li><!-- //gender -->
+
+          <li class="tel">
+            <label for="user_tel">전화번호<span> *</span></label>
+            <br>
+            <select name="" id="tel_first" required="">
+              <option value="010">010</option>
+              <option value="011">011</option>
+            </select>
+            <label for="">-</label>
+            <input type="text" id="tel_second" class="tel_box" size="4" required="">
+            <label for="">-</label>
+            <input type="text" id="tel_third" class="tel_box" size="4" required="">
+          </li><!-- //tel -->
+
+          <li class="email">
+            <label for="user_email">이메일<span> *</span></label>
+            <br>
+            <input type="text" id="emailId" value="" class="mail_box" placeholder="EMAIL" onfocus="this.placeholder=''" onblur="this.placeholder='EMAIL'" required="">
+            <label for="">@</label>
+            <input type="text" name="textEmail" id="textEmail" class="mail_box" onchange="changeEmail();" required="">
+            <select name="emailSel" id="emailSel">
+              <option value="" selected="">선택</option>
+              <option value="naver.com">naver.com</option>
+              <option value="hanmail.net">hanmail.net</option>
+              <option value="nate.com">nate.com</option>
+              <option value="gmail.com">gmail.com</option>
+              <option value="directly" id="textEmail">직접 입력</option>
+            </select>
+          </li><!-- //email -->
+
+          <li class="kakao">
+            <label for="friendsCode">카카오톡 플러스 친구 혜택(+3000원)</label>
+            <br>
+            <input type="text" id="friendsCode" class="kakao_box" placeholder="괄호 안 코드 7자 입력" onfocus="this.placeholder=''" onblur="this.placeholder='괄호 안 코드 7자 입력'" maxlength="7">
+            <button id="codeBtn">확인</button>
+            <ul>
+              <li>· 카카오 플러스친구 채널을 추가하고 일광전구가 보낸 코드 번호를 확인해보세요.</li>
+              <li>· 코드 번호 입력 시 가입 시 즉시 사용 가능한 3,000 포인트를 드립니다.</li>
+              <li>· 포인트 내역은 마이페이지 > 적립금 현황을 확인해주세요.</li>
+            </ul>
+          </li><!-- //kakao -->
+        </ul><!-- //join_list -->
+      </div><!-- //join_form -->
+
+
+      <div id="joinBtn" class="join_btn kor">
+        <span>회원가입</span>
+      </div><!-- //joinBtn -->
+
+    </div><!-- //wrap -->
+  </section><!-- //join -->
+
+  <link rel="stylesheet" href="/footer.af5cb2f3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<!-- user main js  -->
+<script src="/footer.e340dbc0.js" defer=""></script>
+
+
+<body>
+  <footer class="footer">
+    <div class="footer_wrap">
+      <div class="cs eng">
+        <h3>CS CENTER</h3>
+        <h1>053-581-1079</h1>
+        <p class="kor"> 08:00 ~ 17:00 ｜ 주말 및 공휴일 휴무</p>
+      </div><!-- //cs -->
+
+      <div class="footer_logo">
+        <a href="/1962_logo_white.c75feaf9.png"></a> <img src="/1962_logo_white.c75feaf9.png" alt="1962_logo_white">
+      </div>
+
+      <div class="copyright eng">
+        <p>ⓒ 2023 Ilkwang Co., Ltd All rights reserved.</p>
+      </div>
+
+      <div class="insta_icon">
+        <a href="https://www.instagram.com/ilkwanglighting/" target="_blank"><img src="/instagram.4b783f94.png" alt="instagram"></a>
+      </div>
+
+      <div class="footer_menu">
+        <div class="info menu">
+          <p class="eng">INFO</p>
+          <ul>
+            <li><a href="/sub.html">공지사항</a></li>
+            <li><a href="/sub.html">자주 묻는 질문</a></li>
+            <li><a href="/sub.html">이용약관</a></li>
+            <li><a href="/sub.html">개인정보취급방침</a></li>
+          </ul>
+        </div><!-- //info -->
+
+        <div class="support menu">
+          <p class="eng">SUPPORT</p>
+          <ul>
+            <li><a href="/sub.html">제품 가이드</a></li>
+            <li><a href="/sub.html">뉴스</a></li>
+            <li><a href="/sub.html">브로슈어</a></li>
+          </ul>
+        </div><!-- //support -->
+
+        <div class="contact menu">
+          <p class="eng">CONTACT</p>
+          <ul>
+            <li><a href="/sub.html">문의하기</a></li>
+            <li><a href="/sub.html">매장안내</a></li>
+          </ul>
+        </div><!-- //contact -->
+      </div><!-- //footer_menu -->
+
+
+      <div class="business kor">
+        <div class="button">
+          <div id="busiOpen" class="btn_open btn"><i class="fas fa-angle-down"></i></div>
+          <div id="busiClose" class="btn_close btn"><i class="fas fa-angle-up"></i></div>
+        </div>
+        <div class="business_txt">
+          <h5>(주)일광 사업자 정보</h5>
+          <p class="business_info">일광로틱 | 대표 김홍도 | 사업자등록번호 510-05-40260 <a href="#!">[사업자정보확인]</a><br>
+            통신판매신고번호 2013-경북성주-34호 | 개인정보책임자 김홍도<br>
+            경상북도 성주군 선남면 문방1길 1 | 전화 053-581-1079</p>
+        </div><!-- //business_txt -->
+      </div><!-- //business -->
+    </div><!-- //footer_wrap -->
+  </footer>
+</body>
+
+</body>
+
+</html>
