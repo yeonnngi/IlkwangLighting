@@ -120,8 +120,8 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 })({"js/detail.js":[function(require,module,exports) {
 /* -------------- lnb_menu -------------- */
 document.addEventListener('DOMContentLoaded', function () {
-  var ourStory = document.querySelector('.tabMenu_label .lnb_detail .our_story');
-  var support = document.querySelector('.tabMenu_label .lnb_detail .support');
+  var ourStory = document.querySelector('.tabMenu_label .lnb_main .our_story');
+  var support = document.querySelector('.tabMenu_label .lnb_main .support');
   var storyDetail = document.querySelector('.tabMenu_label .lnb_detail .story_detail_bg');
   var supportDetail = document.querySelector('.tabMenu_label .lnb_detail .support_detail_bg');
   ourStory.addEventListener('mouseover', function () {
@@ -454,7 +454,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var file = inputImage.files[0];
     var date = new Date();
     var year = date.getFullYear();
-    var month = date.getMonth() + 1;
+    var month = ('0' + (date.getMonth() + 1)).slice(-2);
     var day = date.getDate().toString().padStart(2, '0');
     var fullDateTime = year + '-' + month + '-' + day;
     var reviewList = document.getElementById('reviewList');
@@ -513,7 +513,7 @@ document.addEventListener('DOMContentLoaded', function () {
   btnAddBtn.addEventListener('click', function () {
     var date = new Date();
     var year = date.getFullYear();
-    var month = date.getMonth() + 1;
+    var month = ('0' + (date.getMonth() + 1)).slice(-2);
     var day = date.getDate().toString().padStart(2, '0');
     var hour = date.getHours().toString().padStart(2, '0');
     ;
@@ -651,7 +651,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53287" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55737" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

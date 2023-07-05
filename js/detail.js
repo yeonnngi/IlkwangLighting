@@ -1,7 +1,7 @@
 /* -------------- lnb_menu -------------- */
 document.addEventListener('DOMContentLoaded', () => {
-  const ourStory = document.querySelector('.tabMenu_label .lnb_detail .our_story')
-  const support = document.querySelector('.tabMenu_label .lnb_detail .support')
+  const ourStory = document.querySelector('.tabMenu_label .lnb_main .our_story')
+  const support = document.querySelector('.tabMenu_label .lnb_main .support')
   const storyDetail = document.querySelector('.tabMenu_label .lnb_detail .story_detail_bg')
   const supportDetail = document.querySelector('.tabMenu_label .lnb_detail .support_detail_bg')
 
@@ -392,7 +392,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let date = new Date();
     let year = date.getFullYear();
-    let month = date.getMonth() + 1;
+    let month = ('0' + (date.getMonth() + 1)).slice(-2);
     let day = date.getDate().toString().padStart(2, '0');
     let fullDateTime = year + '-' + month + '-' + day;
 
@@ -466,7 +466,7 @@ document.addEventListener('DOMContentLoaded', () => {
   btnAddBtn.addEventListener('click', function () {
     let date = new Date();
     let year = date.getFullYear();
-    let month = date.getMonth() + 1;
+    let month = ('0' + (date.getMonth() + 1)).slice(-2);
     let day = date.getDate().toString().padStart(2, '0');
     let hour = date.getHours().toString().padStart(2, '0');;
     let minute = date.getMinutes().toString().padStart(2, '0');
